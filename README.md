@@ -1,5 +1,2 @@
-# PortalEmprego
-An academic project
-
-# Modified
-Testing1
+# Esboço do projeto.
+# URL: http://localhost:8001
