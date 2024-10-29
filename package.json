@@ -2,7 +2,7 @@
   "name": "portalemprego",
   "version": "1.0.0",
   "description": "An academic project",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.21.1",
     "express": "^4.21.1",
     "express-handlebars": "^8.0.1",
     "handlebars": "^4.7.8",
