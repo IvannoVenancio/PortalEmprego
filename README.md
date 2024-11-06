@@ -4,6 +4,7 @@
 # Para instalar o prisma:
 1º Executar *npm install prisma* no terminal
 2ª Executar *npm install @prisma/client* no terminal
+3º Executar *npx prisma init*
 
 
 # Para conectar ao mysql:
