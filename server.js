@@ -1,42 +1,32 @@
-const express = require('express')
-const handlebars = require('express-handlebars')
-//const UserRoutes = require('./routes/UserRoutes')
-const a = require('body-parser')
+const express = require('express');
+const bodyParser = require('body-parser');
+const {engine} = require('express-handlebars');
+
+const UserRoutes = require('./routes/UserRoutes');
 const app = express()
-const port = process.env.PORT || 3000
 
-//Prisma Queries
+app.engine('handlebars', engine({
 
-const { PrismaClient } = require('@prisma/client')
+  defaultLayout: 'main',
+  runtimeOptions:{
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true
 
-const prisma = new PrismaClient()
+   
+  }
 
-async function main() {
-  const newUsers = await prisma.user.create({
-    data:
-      { email: 'Igor', password: 'say my name',},
-    
-  })
-}
+  
 
-main()
-  .then(async () => {
-    await prisma.$disconnect()
-  })
-  .catch(async (e) => {
-    console.error(e)
-    await prisma.$disconnect()
-    process.exit(1)
-  })
+}));
+app.set('view engine', 'handlebars');
 
-/*
-  async function main() {
-  const allUsers = await prisma.user.findMany()
-  console.log(allUsers)
-}*/
+app.use(bodyParser.urlencoded({extended: true}));
+
+app.use(UserRoutes);
+
 
 
 //Listening on port
-app.listen(port, ()=>{
-    console.log(`Servidor a rodar na porta ${port}`)
+app.listen(3000, ()=>{
+    console.log(`Servidor a rodar na porta ${3000}`)
 })

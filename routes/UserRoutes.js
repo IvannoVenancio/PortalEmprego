@@ -1,12 +1,9 @@
-/*const express = require('express')
-const routes = express.Router()
-const UserController = require('./controllers/UserController')
+const express = require('express')
+const indexRoutes = express.Router()
+const UserController = require('../controllers/UserController')
 
 
-//routes.get('/',UserController.listUsers)
-routes.get('/cadastro', UserController.users)
-routes.post('/cadastro', UserController.create)
+indexRoutes.get('/',UserController.users)
 
 
-module.exports = routes
-*/
+module.exports = indexRoutes

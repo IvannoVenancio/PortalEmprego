@@ -1,4 +1,3 @@
-/*const User = require('../models/user')
 
 exports.users = async(req, res) => {
     try {
@@ -7,13 +6,4 @@ exports.users = async(req, res) => {
      console.log(error);   
     }
 }
-exports.create = async(req, res) => {
-    try {
-        const data = req.body;
-        await User.create(data);
-        res.redirect('back')
-    } catch (error) {
-     console.log(error)   
-    }
-}
-*/
+
