@@ -8,6 +8,7 @@ datasource db {
   relationMode = "prisma"
 }
 
+
 model User {
   id Int @id @default(autoincrement())
   user_type_id Int     
@@ -33,8 +34,7 @@ model UserType {
 }
 
 
-model HabilitacoesLiterarias 
-{
+model HabilitacoesLiterarias {
     id Int @id @default(autoincrement())
     nivel_academico String
     instituicao String
@@ -45,8 +45,7 @@ model HabilitacoesLiterarias
 }
 
 
-model ExperienciaProfissional
-{
+model ExperienciaProfissional {
     id Int @id @default(autoincrement())
     empresa String
     cargo String
@@ -57,19 +56,17 @@ model ExperienciaProfissional
 }
 
 
-model Certificacoes
-{
+model Certificacoes {
     id Int @id @default(autoincrement())
     nome String
     instituicoes String
-    ano_obtencao Date
+    ano_obtencao DateTime
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 }
 
 
-model Idioma
-{
+model Idioma {
     id Int @id @default(autoincrement())
     nome String
     nivel String
@@ -78,8 +75,7 @@ model Idioma
 }
 
 
-model RedesSocial
-{
+model RedesSocial {
     id Int @id @default(autoincrement())
     nome String
     link String
@@ -90,8 +86,7 @@ model RedesSocial
 
 
 
-model Recrutador
-{
+model Recrutador {
     id Int @id @default(autoincrement())
     id_user_fk Int
     empresa String
@@ -100,24 +95,21 @@ model Recrutador
 }
 
 
-model TipoContrato
-{
+model TipoContrato {
     id Int @id @default(autoincrement())
     descricao String
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 }
 
-model ModalidadeTrabalho
-{
+model ModalidadeTrabalho {
     id Int @id @default(autoincrement())
     descricao String
     created_at DateTime @default(now())
     updated_at DateTime @updatedAt
 }
 
-model RequisitosQualificacoes
-{
+model RequisitosQualificacoes {
     id Int @id @default(autoincrement())
     descricao String
     created_at DateTime @default(now())
@@ -126,8 +118,7 @@ model RequisitosQualificacoes
 
 
 
-model Notificacoes
-{
+model Notificacoes {
     id Int @id @default(autoincrement())
     id_user_fk Int
     tipo_notificacao String
@@ -138,8 +129,7 @@ model Notificacoes
 
 }
 
-model Candidato
-{
+model Candidato {
     id Int @id @default(autoincrement())
     id_user_fk Int
     id_habilitacoes_literarias_fk Int
@@ -157,8 +147,7 @@ model Candidato
 
 }
 
-model Vaga
-{
+model Vaga {
     id Int @id @default(autoincrement())
 
     titulo String
@@ -166,7 +155,7 @@ model Vaga
     localizacao String
 
     id_recrutador_fk Int
-    id_tipo-contrato_fk Int
+    id_tipo_contrato_fk Int
     id_modalidade_trabalho_fk Int
     id_requisitos_qualificacoes_fk Int
     id_tipo_emprego_fk Int
@@ -181,8 +170,7 @@ model Vaga
     updated_at DateTime @updatedAt
 }
 
-model Candidatura
-{
+model Candidatura {
     id Int @id @default(autoincrement())
     id_candidato_fk Int
     id_vaga_fk Int
@@ -195,12 +183,10 @@ model Candidatura
 }
 
 
-model HistoricoCandidatura
-{
+model HistoricoCandidatura {
     id Int @id @default(autoincrement())
-    id_candidatura_fk
+    id_candidatura_fk Int
     status String
     updated_at DateTime @updatedAt
     created_at DateTime @default(now())
-
 }
