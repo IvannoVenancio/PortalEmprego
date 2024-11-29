@@ -1,1 +1,34 @@
-<h1>Página de cadastramento</h1>
+<!-- cadastro.handlebars -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Digma Works</title>
+  <link rel="stylesheet" href="/CSS/Style.css"/>
+</head>
+
+<h2 class="section-title">Crie sua conta agora oportunidades esperam por você!</h2>
+  <div class="register-container">
+    <h2>Cadastrar-se</h2>
+    <form action="/cadastro" method="POST">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Senha:</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    
+    <p>Já tem uma conta? <a href="/login">Entrar</a></p>
+  </div>
+
+  <div class="buttons">
+      <a href="/Escolha" class="login-btn">Escolha</a>
+    </div>
+</body>
+</html>
