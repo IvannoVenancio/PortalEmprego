@@ -3,18 +3,21 @@ const indexRoutes = express.Router()
 const UserController = require('../controllers/UserController')
 
 
-indexRoutes.get('/',UserController.users)
+indexRoutes.get('/',UserController.home)
 
 indexRoutes.get('/login', UserController.login);
 
 // Rota para a página de cadastro
-indexRoutes.get('/cadastro', UserController.registerPage);
+indexRoutes.get('/cadastro', UserController.cadastro);
+
+//Fim de cadastro genêrico
+indexRoutes.get('/fimdecadastro', UserController.fimdecadastro);
 
 // Rota para a página de ESCOLHA
-indexRoutes.get('/Escolha', UserController.Escolha);
+indexRoutes.get('/escolha', UserController.escolha);
 
 // Rota para a página de paginainicial
-indexRoutes.get('/Paginainicial', UserController.Paginainicial);
+indexRoutes.get('/paginainicial', UserController.paginainicial);
 
 // Rota para a página de cadastrocandidato
 indexRoutes.get('/cadastrocandidato', UserController.cadastrocandidato);
@@ -23,12 +26,12 @@ indexRoutes.get('/cadastrocandidato', UserController.cadastrocandidato);
 indexRoutes.get('/cadastrorecrutador', UserController.cadastrorecrutador);
 
 // Rota para a página de Perfil
-indexRoutes.get('/Perfil', UserController.Perfil);
+indexRoutes.get('/perfil', UserController.perfil);
 
 // Rota para a página de Vagas
-indexRoutes.get('/Vaga', UserController.Vaga);
+indexRoutes.get('/vaga', UserController.vaga);
 
 // Rota para a página de Vagas
-indexRoutes.get('/PaginaRecrutadores', UserController.PaginaRecrutadores);
+indexRoutes.get('/paginarecrutadores', UserController.paginarecrutadores);
 
 module.exports = indexRoutes

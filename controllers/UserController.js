@@ -1,15 +1,4 @@
-
-
-/*exports.users = async(req, res) => {
-    try {
-        res.render('cadastro')
-    } catch (error) {
-     console.log(error);   
-    }
-}*/
-
-
-exports.users = async (req, res) => {
+exports.home = async (req, res) => {
     try {
         res.render('home'); // Rende a página home
     } catch (error) {
@@ -19,31 +8,64 @@ exports.users = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        res.render('Teladelogin'); // Rende a página de login
+        res.render('login'); // Rende a página de login
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.registerPage = async (req, res) => {
+exports.cadastro = async (req, res) => {
     try {
-        res.render('cadastro'); // Rende a página de login
+        res.render('cadastro'); // Rende a página de cadastro
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.Escolha = async (req, res) => {
+exports.fimdecadastro = async (req, res) => {
     try {
-        res.render('Escolha'); // Rende a Página escolha
+        res.render('fimdecadastro');
+//        res.send('Data received successfully!');
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.Paginainicial = async (req, res) => {
+
+/*
+exports.fimDeCadastro = async (req, res) => {
     try {
-        res.render('Paginainicial'); // Rende a Página escolha
+        res.render('fimDeCadastro')
+        const name = req.body.username;
+        const email = req.body.useremail;
+        const password = req.body.userpassword;
+        console.log(req.body.name);
+//        res.send('Data received successfully!');
+    } catch (error) {
+        console.log(error);
+    }
+};
+*/
+
+
+exports.escolha = async (req, res) => {
+    try {
+        res.render('escolha')
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+
+exports.paginainicial = async (req, res) => {
+    try {
+        const fs = require("fs");
+        fs.readFile("./models/cadastrante_candidato.json", "utf8", (err, jsonString) => {
+          const candidato = JSON.parse(jsonString);
+          console.log(candidato)
+        })
+        res.render('paginainicial'); // Rende a Página escolha
+    
     } catch (error) {
         console.log(error);
     }
@@ -65,25 +87,31 @@ exports.cadastrorecrutador = async (req, res) => {
     }
 };
 
-exports.Perfil = async (req, res) => {
+exports.perfil = async (req, res) => {
     try {
-        res.render('Perfil'); // Rende a Página escolha
+        res.render('perfil'); // Rende a Página escolha
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.Vaga = async (req, res) => {
+exports.vaga = async (req, res) => {
     try {
-        res.render('Vaga'); // Rende a Página escolha
+        res.render('vaga'); // Rende a Página escolha
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.PaginaRecrutadores = async (req, res) => {
+exports.paginarecrutadores = async (req, res) => {
     try {
-        res.render('PaginaRecrutadores'); // Rende a Página escolha
+        const fs = require("fs");
+        fs.readFile("./models/cadastrante_recrutador.json", "utf8", (err, jsonString) => {
+          const recrutador = JSON.parse(jsonString);
+          console.log(recrutador)
+        })
+        res.render('paginarecrutadores'); // Rende a Página escolha
+    
     } catch (error) {
         console.log(error);
     }

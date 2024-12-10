@@ -16,7 +16,7 @@ model User {
   password String @db.VarChar(100)
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-  user_type UserType @relation(fields: [user_type_id], references: [id])
+//  user_type UserType @relation(fields: [user_type_id], references: [id])
 
   @@map("user")
 }
@@ -28,7 +28,7 @@ model UserType {
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-  user  User[]
+//  user  User[]
 
   @@map("user_type")
 }
