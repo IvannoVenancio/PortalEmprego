@@ -20,8 +20,6 @@ app.set('view engine', 'handlebars');
 app.use(express.static('public')); 
 
 
-
-
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(UserRoutes);
@@ -29,6 +27,6 @@ app.use(UserRoutes);
 
 
 //Listening on port
-app.listen(3991, ()=>{
-    console.log(`Servidor a rodar na porta ${3991}`)
+app.listen(3992, ()=>{
+    console.log(`Servidor a rodar na porta ${3992}`)
 })

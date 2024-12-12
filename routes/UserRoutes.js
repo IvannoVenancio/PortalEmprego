@@ -1,14 +1,20 @@
 const express = require('express')
 const indexRoutes = express.Router()
 const UserController = require('../controllers/UserController')
+const TipoUsuarioController = require('../controllers/TipoUsuarioController')
 
 
-indexRoutes.get('/',UserController.users)
+//indexRoutes.get('/',UserController.users)
+indexRoutes.get('/', UserController.view)
+indexRoutes.post('/create_user', UserController.create)
+
+
 
 indexRoutes.get('/login', UserController.login);
 
 // Rota para a página de cadastro
-indexRoutes.get('/cadastro', UserController.registerPage);
+//indexRoutes.get('/cadastro', UserController.registerPage);
+indexRoutes.get('/cadastro', UserController.view);
 
 // Rota para a página de ESCOLHA
 indexRoutes.get('/Escolha', UserController.Escolha);
@@ -31,9 +37,9 @@ indexRoutes.get('/Vaga', UserController.Vaga);
 // Rota para a página de Vagas
 indexRoutes.get('/PaginaRecrutadores', UserController.PaginaRecrutadores);
 
-
-
-
+// ROTA PARA A PÁGINA TIPO USUARIOS
+indexRoutes.get('/tipo_usuario', TipoUsuarioController.view)
+indexRoutes.post('/tipo_usuario', TipoUsuarioController.create)
 
 
 

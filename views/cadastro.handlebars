@@ -1,25 +1,24 @@
-<!-- cadastro.handlebars -->
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro - Digma Works</title>
+
   <link rel="stylesheet" href="/CSS/Style.css"/>
-</head>
 
-<h2 class="section-title">Crie sua conta agora oportunidades esperam por você!</h2>
-  <div class="register-container">
+<body class="container-cadastro">
+  
+<h2 class="titulo-cadastro">CRIE SUA CONTA AGORA OPORTUNIDADES ESPERAM POR VOCÊS!</h2>
+  <div class="container-registro">
     <h2>Cadastrar-se</h2>
-    <form action="/cadastro" method="POST">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" required />
-
+    <form  action="/create_user" method="post">
+    
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
-
+      <input type="email" id="email" name="email" required /><br>
       <label for="password">Senha:</label>
-      <input type="password" id="password" name="password" required />
+      <input type="password" id="password" name="password" required /><br>
+
+        <select name="tipo_usuario" id="">
+        <option value="">Selecione...</option>
+        {{#each TipoUsuario}}
+        <option value="{{id}}">{{tipo}}</option>
+        {{/each}}
+    </select> <br>
 
       <button type="submit">Cadastrar</button>
     </form>
@@ -29,6 +28,21 @@
 
   <div class="buttons">
       <a href="/Escolha" class="login-btn">Escolha</a>
+      <a href="/tipo_usuario">User Type</a>
     </div>
+
+    <table>
+    <tr>
+        <td>#</td>
+        <td>Email</td>
+    </tr>
+    {{#each user  }}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{email}}</td>
+        
+    </tr>
+    {{/each}}
+</table>
 </body>
 </html>

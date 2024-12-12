@@ -6,49 +6,11 @@ body {
   padding: 0;
 }
 
-nav {
-  background-color: #333;
-  overflow: hidden;
-}
-
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  float: left;
-}
-
-nav ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  background-color: #575757;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-    nav ul li {
-    float: none;
-  }}
-
-
-    /* estilos*/
-    *{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    /* estilo pagina home*/
+    
 
     /* Estilos para o corpo */
-    body {
+    body.pagina-home{
       font-family: Arial, sans-serif;
       background-color: #f4f4f9;
       display: flex;
@@ -57,7 +19,7 @@ nav ul li a:hover {
     }
 
     /* Cabeçalho (Barra de Navegação) */
-    header {
+    header.pagina-home {
       width: 100%;
       display: flex;
       justify-content: space-between;
@@ -106,7 +68,7 @@ nav ul li a:hover {
     }
 
 /* Container de Texto e Imagem */
-.content-container {
+.container-textohome {
     width: 70%;
     padding: 60px 20px 20px;
     margin-top: 80px;
@@ -115,24 +77,11 @@ nav ul li a:hover {
     gap: 20px;
     align-items: start;
   }
-
-
-   /* Texto Explicativo */
-    .explanatory-text {
+   /* Texto Explicativo */ 
+   .texto-home {
       background-color: #ffffff;
-      padding: 20px;
-      border-left: 5px solid #4CAF50;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-      font-size: 18px;
-      color: #333;
-      line-height: 1.6;
-      animation: fadeInUp 1s ease-out;
-    }
-
-    .explanatory-text {
-      background-color: #ffffff;
-      padding: 20px;
-      border-left: 5px solid #4CAF50;
+      padding: 10px;
+      border-left: 5px solid #29ca1a;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       font-size: 18px;
       color: #333;
@@ -151,7 +100,7 @@ nav ul li a:hover {
     
     /*ESTILIZAÇÃO TELA DE LOGIN*/
 
-    body {
+    body.tela-login {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -162,7 +111,7 @@ nav ul li a:hover {
       }
   
       /* Caixa de login */
-      .login-container {
+      .container-telalogin{
         background-color: #fff;
         padding: 40px;
         border-radius: 8px;
@@ -172,13 +121,12 @@ nav ul li a:hover {
         text-align: center;
       }
   
-      .login-container h2 {
+      .container-telalogin h2 {
         margin-bottom: 20px;
         color: #333;
       }
-  
-      .login-container input[type="text"],
-      .login-container input[type="password"] {
+      .container-telalogin input[type="text"],
+      .container-telalogin input[type="password"] {
         width: 100%;
         padding: 12px;
         margin: 8px 0;
@@ -187,7 +135,7 @@ nav ul li a:hover {
         box-sizing: border-box;
       }
   
-      .login-container button {
+      .container-telalogin button {
         width: 100%;
         padding: 12px;
         background-color: #4CAF50;
@@ -198,12 +146,12 @@ nav ul li a:hover {
         cursor: pointer;
       }
   
-      .login-container button:hover {
+      .container-telalogin button:hover {
         background-color: #45a049;
       }
   
       /* Link para recuperar senha */
-      .login-container a {
+      .container-telalogin a {
         display: block;
         margin-top: 15px;
         color: #4CAF50;
@@ -211,15 +159,12 @@ nav ul li a:hover {
         font-size: 14px;
       }
   
-      .login-container a:hover {
+      .container-telalogin a:hover {
         text-decoration: underline;
       }
 
-
-
-
-      /* Estilo geral */
-body {
+      /* PAGINA DE CADASTRO*/
+body.container-cadastro {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -227,30 +172,27 @@ body {
     color: #333;
   }
   
-  /* PAGINA DE CADASTRO*/
-  
   /* Título da seção */
-.section-title {
+.titulo-cadastro {
     text-align: center;
     font-size: 25px;
     margin: 20px 0;
-    color: #0e470c;
+    font-family: sans-serif;
+    color: #39439092;
   }
 
-
   /* Container do formulário */
-  .register-container {
+  .container-registro {
     max-width: 400px;
     margin: 50px auto;
-    padding: 20px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
   }
-  
-  .register-container h2 {
-    margin-bottom: 20px;
+  .container-registro h2 {
+    margin-bottom: 10px;
     font-size: 24px;
     color: #4CAF50;
   }
@@ -263,16 +205,16 @@ body {
   
   form label {
     font-size: 14px;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
     text-align: left;
   }
   
   form input {
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-size: 17px;
     width: 100%;
   }
   
@@ -292,25 +234,25 @@ body {
   }
   
   /* Link para login */
-  .register-container p {
+  .container-registro p {
     margin-top: 10px;
     font-size: 14px;
   }
   
-  .register-container p a {
+  .container-registro p a {
     color: #4CAF50;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
   }
   
-  .register-container p a:hover {
+  .container-registro p a:hover {
     color: #45a049;
   }
   
 
   /*ESTILIZAÇÃO ESCOLHA*/
-body {
+body.Pagina-Escolha {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -322,7 +264,7 @@ body {
     height: 100vh;
 }
 
-.container {
+.container-Escolha{
     text-align: center;
 }
 
@@ -338,13 +280,13 @@ p {
     color: #45a049;
 }
 
-.choice-container {
+.blobo-escolha {
     display: flex;
     gap: 2rem;
     justify-content: center;
 }
 
-.choice-card {
+.escolha-cartão {
     background: #fff;
     color: #333;
     border-radius: 10px;
@@ -356,25 +298,23 @@ p {
     text-align: center;
 }
 
-
-
-.choice-card h2 {
+.escolha-cartão h2 {
   text-align: center;
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
-.choice-card p {
+.escolha-cartão p {
     font-size: 1rem;
 }
 
-.choice-card:hover {
+.escolha-cartão:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Botão estilizado usando <a> */
-.btn-candidate {
+.btn-candidato {
   display: inline-block;
   background-color: #ffffff;
   color: #3baf4e;
@@ -388,18 +328,18 @@ p {
   text-align: center;
 }
 
-.btn-candidate:hover {
+.btn-candidato:hover {
   background-color: #11254c;
   transform: scale(1.05);
 }
 
-.btn-candidate:active {
+.btn-candidato:active {
   transform: scale(0.95);
 }
 
-/*Candidato*/
+/*Cadastro-Candidato*/
 
-body {
+body.Pagina-cadastro {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
@@ -411,7 +351,7 @@ body {
   height: 100vh;
 }
 
-.container01 {
+.container02-cadastro {
   background: #fff;
   color: #333;
   padding: 2rem;
@@ -428,7 +368,7 @@ h1 {
   color: #2575fc;
 }
 
-form {
+.candidato-form {
   display: flex;
   flex-direction: column;
 }
@@ -451,7 +391,7 @@ textarea {
   resize: none;
 }
 
-.btn-submit, .btn-student {
+.btn-enviocadastro, .btn-estudante {
   background-color: #fbfcff;
   color: #100f0f;
   font-size: 1.2rem;
@@ -463,38 +403,34 @@ textarea {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-submit:hover, .btn-student:hover {
+.btn-enviocadastro:hover, .btn-estudante:hover {
   background-color: #1e63d0;
   transform: scale(1.05);
 }
 
-.btn-submit:active, .btn-student:active {
+.btn-enviocadastro:active, .btn-estudante:active {
   transform: scale(0.95);
 }
 
-.student-section {
+.Secção-Estudante {
   margin-top: 1.5rem;
   text-align: center;
 }
 
-
-
-
 /*Recrutador*/
 
-body {
+body.pagina-recrutador {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
   background: #fff;
   color: #fff;
   display: flex;
-  justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.container02 {
+.container1-recrutador {
   background: #fff;
   color: #333;
   padding: 2rem;
@@ -505,24 +441,24 @@ body {
   text-align: center;
 }
 
-h1 {
+.container1-recrutador h1 {
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
   color: #2575fc;
 }
 
-form {
+.form-recrutador {
   display: flex;
   flex-direction: column;
 }
 
-label {
+.form-recrutador label {
   margin-top: 1rem;
   font-weight: bold;
   text-align: left;
 }
 
-input, textarea {
+.form-recrutador input, textarea {
   margin-top: 0.5rem;
   padding: 0.8rem;
   border: 1px solid #ccc;
@@ -531,11 +467,11 @@ input, textarea {
   width: 100%;
 }
 
-textarea {
+.form-recrutador textarea {
   resize: none;
 }
 
-.btn-submit {
+.btn-enviorecrutador {
   background-color: #2575fc;
   color: #fff;
   font-size: 1.2rem;
@@ -547,12 +483,12 @@ textarea {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.btn-submit:hover {
+.btn-enviorecrutador:hover {
   background-color: #1e63d0;
   transform: scale(1.05);
 }
 
-.btn-submit:active {
+.btn-enviorecrutador:active {
   transform: scale(0.95);
 }
 
@@ -565,142 +501,191 @@ textarea {
   box-sizing: border-box;
 }
 
-body {
+body.Paginainicial {
   font-family: 'Arial', sans-serif;
-  line-height: 1.6;
+  background-color: #f0f2f5;
   color: #333;
-  background-color: #f9f9f9;
 }
 
-/* Cabeçalho */
-.main-header {
-  background-color: #151616;
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #28486a;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-publicarcand {
+  background-color: #1c3a5a;
   color: #fff;
-  padding: 1rem 0;
+  transition: background-color 0.3s ease;
 }
 
-.navbar {
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+/* Navbar */
+header.nav-paginainicial {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90%;
-  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: #1c3a5a;;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
-.logo {
+
+.logopag-candidato {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-.nav-links {
-  list-style: none;
+.logopag-candidato span {
+  color: #2b904b;
+}
+
+.pesquisapag-candidato {
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.nav-links li {
-  margin: 0 1rem;
-}
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #ffcc00;
-}
-
-.btn-nav {
-  background-color: #ffcc00;
-  padding: 0.5rem 1rem;
+.pesquisapag-candidato input {
+  padding: 0.5rem;
+  border: 1px solid #f8f9fbdc;
   border-radius: 5px;
+  width: 200px;
 }
 
-/* Seção de Banner */
-.hero-section {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: #fff;
-  padding: 4rem 0;
-  text-align: center;
+/* Layout Principal */
+.container-paginaprincipal {
+  display: flex;
+  margin-top: 80px;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
 }
 
-.hero-content h1 {
-  font-size: 2.5rem;
+/* Sidebar Esquerda */
+.Barralateral-esquerda{
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Barralateral-esquerda ul {
+  list-style: none;
+}
+
+.Barralateral-esquerda ul li {
   margin-bottom: 1rem;
 }
 
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.Barralateral-esquerda ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+/* Feed */
+.feedpag-candidato {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.search-jobs {
+.caixapost-candidato{
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.caixapost-candidato textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.Opçõespost-candidato button {
+  margin-right: 0.5rem;
+}
+
+.postagens-candidato {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.postagenscand-header {
   display: flex;
-  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 
-.search-jobs input,
-.search-jobs select,
-.search-jobs button {
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
+.postagenscand-header img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.conteinerpost-candidato {
+  margin: 1rem 0;
+}
+
+.postreações-candidato button {
+  margin-right: 1rem;
+  background: none;
   font-size: 1rem;
+  color: #4cb36e;
 }
 
-.search-jobs button {
-  background-color: #ffcc00;
-  color: #333;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.search-jobs button:hover {
-  background-color: #ffd740;
-}
-
-/* Cards de Seções */
-.section {
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.card {
+/* Sidebar Direita */
+.barralateral-dircand {
+  flex: 1;
   background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  width: 250px;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-.card i {
-  font-size: 3rem;
-  color: #2575fc;
+
+.sugestões-candidato {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.btn-card {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: #2575fc;
-  color: #fff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+.sugestões-candidato img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
 }
 
-.btn-card:hover {
-  background-color: #1e63d0;
-}
+
+
+
+
+
+
 
 /*PAGINARECRUTADORES
 
@@ -897,9 +882,21 @@ button {
 
 
 /* Rodapé */
-.main-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333;
-  color: #fff;
+/* Para garantir que o conteúdo principal não cubra o rodapé 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
+
+.main-footer {
+  position: fixed; /* 'fixed' para fixá-lo no final 
+  text-align: center;
+  padding: 0.1rem 0;
+  background-color: #263748;
+  color: #fff;
+  z-index: 100;
+  width: 100%;
+}
+*/
