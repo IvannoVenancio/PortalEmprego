@@ -1,0 +1,32 @@
+<body>
+<h1>Cadastro de Candidato</h1>
+<form action="/cadastrocandidato" method="POST">
+    <!-- Nome -->
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="form_name" placeholder="Digite seu nome" required>
+    
+    <!-- Localidade -->
+    <label for="location">Localidade:</label>
+    <input type="text" id="location" name="form_location" placeholder="Cidade/Estado" required>
+    
+    <!-- Cargo mais recente -->
+    <label for="recent-role">Cargo Mais Recente:</label>
+    <input type="text" id="recent-role" name="form_recent_role" placeholder="Ex.: Analista de Marketing" required>
+    
+    <!-- Informações adicionais -->
+    <label for="additional-info">Outras Informações:</label>
+    <textarea id="additional-info" name="form_additional_info" rows="4" placeholder="Adicione informações relevantes..."></textarea>
+    
+    <!-- Botão caso seja estudante -->
+    <div class="student-section">
+        <p>É estudante?</p>
+        <!--
+        <button type="button" id="student-button" class="btn-student">
+            Clique aqui para cadastro de estudante
+        </button>-->
+    </div>
+
+    <!-- Botão de envio -->
+    <button type="submit">Cadastrar como candidato</button>
+</form>   
+</body>
