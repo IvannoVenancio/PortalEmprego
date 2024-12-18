@@ -1,9 +1,11 @@
 
   <link rel="stylesheet" href="/CSS/Style.css"/>
 
+
+
+<h2 class="titulo-cadastro">CRIE SUA CONTA AGORA OPORTUNIDADES ESPERAM POR VOCÊS!</h2>
 <body class="container-cadastro">
   
-<h2 class="titulo-cadastro">CRIE SUA CONTA AGORA OPORTUNIDADES ESPERAM POR VOCÊS!</h2>
   <div class="container-registro">
     <h2>Cadastrar-se</h2>
     <form  action="/create_user" method="post">
@@ -13,9 +15,9 @@
       <label for="password">Senha:</label>
       <input type="password" id="password" name="password" required /><br>
 
-        <select name="tipo_usuario" id="">
+        <select name="user_type" id="">
         <option value="">Selecione...</option>
-        {{#each TipoUsuario}}
+        {{#each tipoUsuario}}
         <option value="{{id}}">{{tipo}}</option>
         {{/each}}
     </select> <br>
@@ -26,11 +28,39 @@
     <p>Já tem uma conta? <a href="/login">Entrar</a></p>
   </div>
 
+<script>
+  document.addEventListener("submit", () => {
+    const form = document.getElementById("create_user"); // Captura o formulário
+    const tipoUsuario = document.getElementById("user_type"); // Captura o select
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // Evita o envio padrão
+
+      // Obtém o tipo de usuário selecionado
+      const escolha = tipoUsuario.value;
+
+      // Redireciona com base na seleção
+      if (escolha === "Candidato") {
+        window.location.href = "/cadastrocandidato"; // Página do candidato
+      } else if (escolha === "Recrutador") {
+        window.location.href = "/cadastrorecrutador"; // Página do recrutador
+      } else {
+        alert("Por favor, selecione uma opção antes de continuar.");
+      }
+    });
+  });
+</script>
+
+
+
+
+
+
+
   <div class="buttons">
-      <a href="/Escolha" class="login-btn">Escolha</a>
       <a href="/tipo_usuario">User Type</a>
     </div>
-
+{{!--
     <table>
     <tr>
         <td>#</td>
@@ -44,5 +74,6 @@
     </tr>
     {{/each}}
 </table>
+--}}
 </body>
 </html>

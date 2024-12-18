@@ -4,10 +4,11 @@ const UserController = require('../controllers/UserController')
 const TipoUsuarioController = require('../controllers/TipoUsuarioController')
 
 
-//indexRoutes.get('/',UserController.users)
+indexRoutes.get('/home',UserController.users)
 indexRoutes.get('/', UserController.view)
 indexRoutes.post('/create_user', UserController.create)
 
+// Rota para a página de home
 
 
 indexRoutes.get('/login', UserController.login);
@@ -16,8 +17,6 @@ indexRoutes.get('/login', UserController.login);
 //indexRoutes.get('/cadastro', UserController.registerPage);
 indexRoutes.get('/cadastro', UserController.view);
 
-// Rota para a página de ESCOLHA
-indexRoutes.get('/Escolha', UserController.Escolha);
 
 // Rota para a página de paginainicial
 indexRoutes.get('/Paginainicial', UserController.Paginainicial);
