@@ -1,19 +1,40 @@
-version: '3.7'
 
 services:
- app:
+  app:
     build:
       context: ./
       dockerfile: Dockerfile
     container_name: node-app
+    env_file:
+      - ./.env
     ports:
-      - 3000:3000
+      - 3992:3992
     volumes:
-      - ./:/home/app/
+      - ./:/home/app
     networks:
       - app-network
+    depends_on:
+      - mysqlbd
+    links:
+      - mysqlbd   
+   
 
+  mysqlbd:
+    image: mysql:8.0.40
+    container_name: portal_emprego_bd
+    env_file:
+      - ./.env
+    ports:
+      - 3307:3306
+    volumes:
+      - ./:/home/app
+    networks:
+      - app-network 
+   
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  app-network: {}    

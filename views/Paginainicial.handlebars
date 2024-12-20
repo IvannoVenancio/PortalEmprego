@@ -1,0 +1,22 @@
+<body>
+<h1>Pagina default pra candidatos</h1>
+
+    {{#each users  }}
+    <tr>
+        <td>Id: {{id}}</td><br>
+        <td>Cargo recente: {{cargo_recente}}</td><br>
+        <td>Id de certificado: {{id_certificacoes_fk}}</td><br>
+        <td>Informação adicional: {{informacao_adicional}}</td><br><br>
+        
+    </tr>
+    {{/each}}
+
+
+    {{#each certificacoes  }}
+    <tr>
+        <td>Id: {{id}}</td><br>
+        <td>Nome: {{nome}}</td><br>
+    </tr>
+    {{/each}}
+</table>
+</body>

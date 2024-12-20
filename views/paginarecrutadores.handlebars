@@ -1,0 +1,14 @@
+<body>
+<h1>Pagina default pra recrutadores</h1>
+
+    {{#each users  }}
+    <tr>
+        <td>Id: {{id}}</td><br>
+        <td>Email: {{email}}</td><br>
+        <td>Empresa: {{empresa}}</td><br>
+        <td>Data de criação: {{created_at}}</td><br><br>
+        
+    </tr>
+    {{/each}}
+</table>
+</body>
