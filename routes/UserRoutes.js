@@ -33,6 +33,9 @@ indexRoutes.get('/Perfil', UserController.Perfil);
 // Rota para a página de Vagas
 indexRoutes.get('/Vaga', UserController.Vaga);
 
+// Rota para a página de VagasRecrutador
+indexRoutes.get('/VagasRecrutador', UserController.VagasRecrutador);
+
 // Rota para a página de Vagas
 indexRoutes.get('/PaginaRecrutadores', UserController.PaginaRecrutadores);
 

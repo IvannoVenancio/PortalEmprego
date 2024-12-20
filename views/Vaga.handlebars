@@ -2,9 +2,69 @@
 <link rel="stylesheet" href="/CSS/Style.css"/>
 
 
-
-<div class="container">
-        <h1>Bem-vindo ao Digma Works!</h1>
-        <p>Selecione sua função para continuar:</p>
-        
+<body class="Vagas">
+  <!-- Barra de Navegação -->
+  <nav class="navbar-Vagas">
+    <div class="logo-PagVagas">Digma Works</div>
+    <input type="text" placeholder="Buscar vagas..." class="searchbar-Vagas">
+    <div class="nav-linksPagVagas">
+      <a href="/home">Início</a>
+      <a href="/profile">Meu Perfil</a>
+      <a href="/messages">Mensagens</a>
+      <a href="/jobs" class="active">Vagas</a>
     </div>
+  </nav>
+
+  <div class="container-PagVagas">
+    <!-- Barra Lateral -->
+    <aside class="sidebar-PagVagas">
+      <h3>Filtrar Vagas</h3>
+      <form>
+        <label for="location">Localização:</label>
+        <input type="text" id="location" name="location" placeholder="Ex: Camama"><br>
+        
+        <label for="Tipo Vagas">Tipo de Emprego:</label>
+        <select id="Tipo Vagas" name="job_type">
+          <option value="full-time">Integral</option>
+          <option value="part-time">Meio Período</option>
+          <option value="freelance">Freelancer</option>
+        </select><br>
+        
+        <label for="sector">Setor:</label>
+        <select id="sector" name="sector">
+          <option value="tech">Tecnologia</option>
+          <option value="healthcare">Saúde</option>
+          <option value="education">Educação</option>
+        </select><br>
+        
+        <button type="submit">Aplicar Filtros</button>
+      </form>
+    </aside>
+
+    <!-- Lista de Vagas -->
+    <main class="Lista-Vagas">
+      <h2>Vagas Disponíveis</h2>
+      <div class="Vagascard">
+        <h3>Desenvolvedor Full-Stack</h3>
+        <p><strong>Empresa:</strong> TechCorp</p>
+        <p><strong>Localização:</strong> Remoto</p>
+        <p>Trazer a tecnoligia até nós. <a href="/vaga/1">Ver mais</a></p>
+      </div>
+
+      <div class="Vagascard">
+        <h3>Designer UX/UI</h3>
+        <p><strong>Empresa:</strong> Creative Solutions</p>
+        <p><strong>Localização:</strong> São Paulo</p>
+        <p>Profissional com experiência e amor pela arte. <a href="/vaga/2">Ver mais</a></p>
+      </div>
+
+      <div class="Vagascard">
+        <h3>Analista de Dados</h3>
+        <p><strong>Empresa:</strong> Data Insights</p>
+        <p><strong>Localização:</strong> Belo Horizonte</p>
+        <p>Analista de dados . <a href="/vaga/3">Ver mais</a></p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -66,6 +66,14 @@ exports.Vaga = async (req, res) => {
     }
 };
 
+exports.VagasRecrutador = async (req, res) => {
+    try {
+        res.render('VagaRecrutador'); // Rende a Página escolha
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 exports.PaginaRecrutadores = async (req, res) => {
     try {
         res.render('PaginaRecrutadores'); // Rende a Página escolha

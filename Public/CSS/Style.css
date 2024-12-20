@@ -131,17 +131,13 @@ body.tela-login {
 
 /* Caixa de login */
 .container-telalogin {
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  width: 100%;
   max-width: 400px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+      margin: 60px auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
 }
 
 /* Título centralizado */
@@ -161,20 +157,17 @@ body.tela-login {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-  font-size: 16px;
 }
 
 /* Botão de login */
 .container-telalogin button {
   width: 100%;
-  padding: 12px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  font-weight: bold;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
 }
 
 .container-telalogin button:hover {
@@ -200,34 +193,35 @@ body.tela-login {
 body.container-cadastro {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 70px;
+  padding: 0px;
   background-color: #f7f7f7;
   color: #333;
 }
 
-/* Título da seção */
+/* Título da seção 
 .titulo-cadastro {
   text-align: center;
-  font-size: 25px;
+  font-size: 28px;
   margin: 20px 0;
-  font-family: sans-serif;
-  color: #39439092;
-}
+  color: #4CAF50;
+}*/
 
 /* Container do formulário */
 .container-registro {
   max-width: 400px;
-  margin: 24px auto;
-  padding: 10px;
+  margin: 50px auto;
+  padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+
 }
 .container-registro h2 {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   font-size: 24px;
   color: #4CAF50;
+
 }
 
 /* Estilo do formulário */
@@ -238,17 +232,17 @@ form {
 
 form label {
   font-size: 14px;
-  margin-bottom: 1px;
+  margin-bottom: 5px;
   text-align: left;
 }
 
 form input {
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 10px  0px;
+  margin-bottom: -20px;
   border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 17px;
-  width: 93%;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
 }
 
 form button {
@@ -289,14 +283,14 @@ form button:hover {
 
 body.Pagina-cadastro {
   font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .container02-cadastro {
@@ -305,10 +299,9 @@ body.Pagina-cadastro {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  width: 30%;
+  width: 37%;
   max-width: 500px;
   text-align: center;
-  height: 65%;
 }
 
 h1 {
@@ -329,11 +322,11 @@ label {
 
 input, textarea {
   margin-top: 0.5rem;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem;
-  width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
 }
 
 textarea {
@@ -341,19 +334,19 @@ textarea {
 }
 
 .btn-enviocadastro, .btn-estudante {
-  background-color: #fbfcff;
-  color: #100f0f;
-  font-size: 1.2rem;
-  padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 1.5rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #7f9ba7;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-enviocadastro:hover, .btn-estudante:hover {
-  background-color: #1e63d0;
+  background-color: #80b177;
   transform: scale(1.05);
 }
 
@@ -365,6 +358,613 @@ textarea {
   margin-top: 1.5rem;
   text-align: center;
 }
+
+.candidato-form input {
+  padding: 10px  0px;
+  margin-bottom: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.candidato-form label{
+  font-size: 14px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+
+
+/*ESTILIZAÇÃO PAGINA PRINCIPAL*/
+
+
+body.Paginainicial {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #28486a;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-publicarcand {
+  background-color: #1c3a5a;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+/* Navbar */
+header.nav-paginainicial {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1c3a5a;;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logopag-candidato {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logopag-candidato span {
+  color: #2b904b;
+}
+
+.pesquisapag-candidato {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pesquisapag-candidato input {
+  padding: 0.5rem;
+  border: 1px solid #f8f9fbdc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+/* Layout Principal */
+.container-paginaprincipal {
+  display: flex;
+  margin-top: 80px;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+}
+
+/* Sidebar Esquerda */
+.Barralateral-esquerda{
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Barralateral-esquerda ul {
+  list-style: none;
+}
+
+.Barralateral-esquerda ul li {
+  margin-bottom: 1rem;
+}
+
+.Barralateral-esquerda ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+/* Feed */
+.feedpag-candidato {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.caixapost-candidato{
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.caixapost-candidato textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.Opçõespost-candidato button {
+  margin-right: 0.5rem;
+}
+
+.postagens-candidato {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.postagenscand-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.postagenscand-header img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.conteinerpost-candidato {
+  margin: 1rem 0;
+}
+
+.postreações-candidato button {
+  margin-right: 1rem;
+  background: none;
+  font-size: 1rem;
+  color: #4cb36e;
+}
+
+/* Sidebar Direita */
+.barralateral-dircand {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sugestões-candidato {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sugestões-candidato img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Recrutador*/
+
+body.pagina-recrutador {
+  font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 74px;
+    background: linear-gradient(135deg, #60a346, #4b8664);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container1-recrutador {
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 37%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.container1-recrutador h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #2575fc;
+}
+
+.form-recrutador {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-recrutador label {
+  font-size: 14px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.form-recrutador input, textarea {
+  padding: 10px  0px;
+  margin-bottom: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.form-recrutador textarea {
+  resize: none;
+  
+}
+
+.btn-enviorecrutador {
+  background-color: #2575fc;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-enviorecrutador:hover {
+  background-color: #1e63d0;
+  transform: scale(1.05);
+}
+
+.btn-enviorecrutador:active {
+  transform: scale(0.95);
+}
+
+
+/*Estilização PaginaRecrutador*/
+body.PaginaRecrutador{
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #007bff;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+/* Navbar */
+.navbar-PagRecrutador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logoPagRecrutador {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logoPagRecrutador span {
+  color: #007bff;
+}
+
+.search-barPagRecrutador {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.search-barPagRecrutador input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+.menu-links a {
+  margin-left: 1rem;
+}
+
+/* Layout Principal */
+.main-containerPagRecrutador {
+  display: flex;
+  margin-top: 80px;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+}
+
+/* Sidebar Esquerda */
+.left-sidebarPagRecrutador {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-sidebarPagRecrutador ul {
+  list-style: none;
+}
+
+.left-sidebarPagRecrutador ul li {
+  margin-bottom: 1rem;
+}
+
+.left-sidebarPagRecrutador ul li a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+/* Feed */
+.feed-PagRecrutador {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-boxPagRecrutador {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.post-boxPagRecrutador textarea {
+  width: 100%;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.post-opçõesPagRecrutador button {
+  margin-right: 0.5rem;
+}
+
+.postes-PagRecrutador {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.postes-headerPagRecrutador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.postes-headerPagRecrutador img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.postes2-PagRecrutador {
+  margin: 1rem 0;
+}
+
+.postação-PagRecrutador button {
+  margin-right: 1rem;
+  background: none;
+  font-size: 1rem;
+  color: #007bff;
+}
+
+/* Sidebar Direita */
+.right-sidebarPagRecrutador {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sugestõesPagRecrutador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sugestõesPagRecrutador img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+
+/* Estilização PaginaVagas */
+
+body.Vagas {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar-Vagas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077b5;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.navbar-Vagas .logo-PagVagas {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-Vagas .searchbar-Vagas {
+  flex: 1;
+  margin: 0 15px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.navbar-Vagas .nav-linksPagVagas a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.navbar-Vagas .nav-linksPagVagas a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+
+/* Layout */
+.container-PagVagas {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+/* Sidebar */
+.sidebar-PagVagas {
+  width: 250px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-PagVagas h3 {
+  margin-bottom: 10px;
+  color: #1e63d0;
+}
+
+.sidebar-PagVagas label {
+  display: block;
+  margin-top: 10px;
+}
+
+.sidebar-PagVagas input,
+.sidebar-PagVagas select,
+.sidebar-PagVagas button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sidebar-PagVagas button {
+  background-color: #0077b5;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar-PagVagas button:hover {
+  background-color: #005f8d;
+}
+
+/* Lista-Vagas */
+.Lista-Vagas {
+  flex: 1;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Lista-Vagas h2 {
+  margin-bottom: 20px;
+  color: #4c963e;
+}
+
+.Vagascard {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.Vagascard h3 {
+  margin-bottom: 5px;
+  color: #1c3a5a;
+}
+
+.Vagascard p {
+  margin: 5px 0;
+}
+
+.Vagascard a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.Vagascard a:hover {
+  text-decoration: underline;
+}
+
 
 
 
