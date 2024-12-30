@@ -116,6 +116,64 @@ nav ul li a {
   display: block;
 }
 
+/* Conteiner Vagas destaques */
+
+.vagas-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.vagas-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.vagas-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.vagas-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vagas-card h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.vagas-card p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.vagas-card .details-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.vagas-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
 
  /* ESTILIZAÇÃO TELA DE LOGIN */
 
@@ -965,6 +1023,201 @@ body.Vagas {
   text-decoration: underline;
 }
 
+
+/* Estilização VAGASRECRUTADOR */
+body.VagasRecrutador {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.navbar-VagasRecrutador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0077b5;
+  color: #fff;
+  padding: 72px 20px;
+}
+
+.navbar-VagasRecrutador .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar-VagasRecrutador .nav-linksVagasRecrutador a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 15px;
+}
+
+.navbar-VagasRecrutador .nav-linksVagasRecrutador a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+
+.container-VagasRecrutador {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.header-VagasRecrutador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn-createVagRe {
+  padding: 10px 20px;
+  background-color: #0077b5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-createVagRe:hover {
+  background-color: #005f8d;
+}
+
+.lista-vagasrecrutador .vagasrecrutador-card {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.vagasrecrutador-card h3 {
+  margin-bottom: 5px;
+}
+
+.vagasrecrutador-card .ação-vagasrecrutador {
+  margin-top: 10px;
+}
+
+.btn-editar-VagRe, .btn-delete-VagRe {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-editar-VagRe{
+  background-color: #f0ad4e;
+  color: #fff;
+}
+
+.btn-delete-VagRe {
+  background-color: #d9534f;
+  color: #fff;
+}
+
+.VagasRecrutador-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Estilo Geral */
+body.CadastroVagas {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Contêiner do Formulário */
+.formVagas {
+  background-color: #fff;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Título */
+.formVagas h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+/* Rótulos */
+.formVagas label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Campos de Entrada */
+.formVagas input,
+.formVagas select,
+.formVagas textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+/* Efeito de Foco nos Campos */
+.formVagas input:focus,
+.formVagas select:focus,
+.formVagas textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Botões */
+.formVagas button {
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formVagas button:hover {
+  background-color: #0056b3;
+}
+
+/* Botão de Cancelar */
+.formVagas button[type="button"] {
+  background-color: #62dc35;
+}
+
+.formVagas button[type="button"]:hover {
+  background-color: #1da71d;
+}
+
+/* Espaço entre os Botões */
+.formVagas button:not(:last-child) {
+  margin-right: 10px;
+}
 
 
 

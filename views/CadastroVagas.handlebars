@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/CSS/Style.css"/>
+
+
+     
+<body class="CadastroVagas">
+  <form class="formVagas" action="/cadastro_vagas" method="post">
+    <h2>Criar Nova Vaga</h2>
+
+    <label for="Cadastrovagas-title">Título da Vaga:</label>
+    <input type="text" name="titulo" placeholder="Ex.: Desenvolvedor Web" required>
+
+    <label for="Cadastrovagas-title">Descrição:</label>
+    <input type="text" name="descricao" placeholder="Ex.: Desenvolvedor Web" required>
+
+    <label for="Cadastrovagas-title">Localização:</label>
+    <input type="text"  name="localizacao" placeholder="Ex.: Desenvolvedor Web" required>
+
+    <label for="Cadastrovagas-title">Modalidade de Trabalho:</label>
+    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+
+    <label for="Cadastrovagas-title">Requisitos Qualificações:</label>
+    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+
+    <label for="Cadastrovagas-title">Tipo de Emprego:</label>
+    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+
+    <label for="Cadastrovagas-title">Idiomas:</label>
+    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+
+    <label for="cadastrovagas-local">Localização:</label>
+    <input type="text" id="cadastrovagas-local" name="job_location" placeholder="Ex.: São Paulo, SP" required>
+
+    <label for="job-status">Status:</label>
+    <select id="job-status" name="job_status">
+      <option value="aberta">Aberta</option>
+      <option value="fechada">Fechada</option>
+    </select>
+
+    <label for="job-description">Descrição:</label>
+    <textarea id="job-description" name="job_description" rows="4" placeholder="Descrição detalhada da vaga" required></textarea>
+
+    <button type="submit">Publicar Vaga</button>
+    <button type="button" onclick="closeJobForm()">Cancelar</button>
+  </form>
+
+  <script>
+    // Função para fechar o formulário
+    function closeJobForm() {
+      alert("Formulário cancelado!");
+      window.history.back(); // Voltar para a página anterior
+    }
+  </script>
+</body>
+

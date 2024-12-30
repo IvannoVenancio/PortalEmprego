@@ -9,13 +9,16 @@ datasource db {
 }
 
 model User {
-  id         Int       @id @default(autoincrement())
-  user_type Int     
+  id         Int @id @default(autoincrement())
+  user_type  Int     
   email      String    @unique @db.VarChar(100)
   password   String    @db.VarChar(100)
   created_at DateTime @default(now()) @db.Timestamp(6)
   update_at DateTime @updatedAt
-   UserType UserType @relation("user_type_user", fields: [user_type], references: [id])
+  UserType UserType @relation("user_type_user", fields: [user_type], references: [id])
+  Recrutador    Recrutador[] @relation("id_user_recrutador")
+  Candidato     Candidato[] @relation("id_user_candidato")
+  Notificacoes  Notificacoes[] @relation("id_user_notificacoes")
   
   @@map("user")
 }
@@ -32,174 +35,181 @@ model UserType {
 }
 
 
-model HabilitacoesLiterarias 
-{
-    id Int @id @default(autoincrement())
-    nivel_academico String
-    instituicao String
-    curso String
-    @@map("habilitacoes_literarias")
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
+model HabilitacoesLiterarias {
+  id              Int @id @default(autoincrement())
+  nivel_academico String
+  instituicao     String
+  curso           String
+  @@map("habilitacoes_literarias")
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Candidato       Candidato[] @relation("habilitacoes_literarias_cand")
 }
 
 
-model ExperienciaProfissional
-{
-    id Int @id @default(autoincrement())
-    empresa String
-    cargo String
-    data_inicio DateTime
-    data_fim DateTime
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
+model ExperienciaProfissional {
+  id          Int @id @default(autoincrement())
+  empresa     String
+  cargo       String
+  data_inicio DateTime
+  data_fim    DateTime
+  created_at  DateTime @default(now())
+  updated_at  DateTime @updatedAt
+  Candidato       Candidato[] @relation("experiencia_profissional_cand")
 }
 
 
-model Certificacoes
-{
-    id Int @id @default(autoincrement())
-    nome String
-    instituicoes String
-    ano_obtencao Date
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
+model Certificacoes{
+  id           Int @id @default(autoincrement())
+  nome         String
+  instituicoes String
+  ano_obtencao DateTime
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Candidato       Candidato[] @relation("certificacoes_candidato")
 }
 
 
-model Idioma
-{
-    id Int @id @default(autoincrement())
-    nome String
-    nivel String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
+model Idioma{
+  id     Int @id @default(autoincrement())
+  nome   String
+  nivel  String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Candidato   Candidato[] @relation("idiomas_candidato")
+  Vaga        Vaga[] @relation()
 }
 
 
-model RedesSocial
-{
-    id Int @id @default(autoincrement())
-    nome String
-    link String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-
-}
-
-
-
-model Recrutador
-{
-    id Int @id @default(autoincrement())
-    id_user_fk Int
-    empresa String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-}
-
-
-model TipoContrato
-{
-    id Int @id @default(autoincrement())
-    descricao String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-}
-
-model ModalidadeTrabalho
-{
-    id Int @id @default(autoincrement())
-    descricao String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-}
-
-model RequisitosQualificacoes
-{
-    id Int @id @default(autoincrement())
-    descricao String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-}
-
-
-
-model Notificacoes
-{
-    id Int @id @default(autoincrement())
-    id_user_fk Int
-    tipo_notificacao String
-    data_envio DateTime @default(now())
-    mensagem String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-
-}
-
-model Candidato
-{
-    id Int @id @default(autoincrement())
-    id_user_fk Int
-    id_habilitacoes_literarias_fk Int
-    id_experiencia_profissional_fk Int
-    id_certificacoes_fk Int
-    id_redes_socias_fk Int
-    id_idiomas_fk Int
-
-    nome_completo String
-    data_nascimento DateTime
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-
-
-
-}
-
-model Vaga
-{
-    id Int @id @default(autoincrement())
-
-    titulo String
-    descricao String
-    localizacao String
-
-    id_recrutador_fk Int
-    id_tipo-contrato_fk Int
-    id_modalidade_trabalho_fk Int
-    id_requisitos_qualificacoes_fk Int
-    id_tipo_emprego_fk Int
-    id_idiomas_fk Int
-
-    data_criacao DateTime
-    latitude Float
-    longitude Float
-    faixa_salariao String
-    salario Float
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
-}
-
-model Candidatura
-{
-    id Int @id @default(autoincrement())
-    id_candidato_fk Int
-    id_vaga_fk Int
-
-    data_candidatura DateTime
-    status String
-    created_at DateTime @default(now())
-    updated_at DateTime @updatedAt
+model RedesSocial{
+  id     Int @id @default(autoincrement())
+  nome   String
+  link   String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Candidato   Candidato[] @relation("redes_socias_cand")
 
 }
 
 
-model HistoricoCandidatura
-{
-    id Int @id @default(autoincrement())
-    id_candidatura_fk
-    status String
-    updated_at DateTime @updatedAt
-    created_at DateTime @default(now())
+model Recrutador{
+  id          Int @id @default(autoincrement())
+  id_user_fk  Int
+  empresa     String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  User        User     @relation("id_user_recrutador", fields: [id_user_fk], references: [id])
+  Vaga        Vaga[] @relation("recrutador_vaga")
+
+}
+
+
+model TipoContrato{
+  id          Int @id @default(autoincrement())
+  descricao   String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Vaga        Vaga[] @relation("tipo_contrato_vaga")
+}
+
+model ModalidadeTrabalho{
+  id        Int @id @default(autoincrement())
+  descricao String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Vaga        Vaga[] @relation("modalidade_trabalho_vaga")
+}
+
+model RequisitosQualificacoes{
+  id        Int @id @default(autoincrement())
+  descricao String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Vaga        Vaga[] @relation("requisitos_qualificacoes_vaga")
+}
+
+
+
+model Notificacoes {
+  id               Int @id @default(autoincrement())
+  id_user_fk       Int
+  tipo_notificacao String
+  data_envio       DateTime @default(now())
+  mensagem         String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  User             User     @relation("id_user_notificacoes", fields: [id_user_fk], references: [id])
+
+}
+
+model Candidato{
+  id                              Int @id @default(autoincrement())
+  nome_completo                   String
+  data_nascimento                 DateTime
+  id_user_fk                      Int
+  id_habilitacoes_literarias_fk   Int
+  id_experiencia_profissional_fk  Int
+  id_certificacoes_fk             Int
+  id_redes_socias_fk              Int
+  id_idiomas_fk                   Int
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Candidatura                     Candidatura[] @relation("candidato_candidatura")
+  User                            User                            @relation("id_user_candidato", fields: [id_user_fk], references: [id])
+  HabilitacoesLiterarias          HabilitacoesLiterarias          @relation("habilitacoes_literarias_cand", fields: [id_habilitacoes_literarias_fk], references: [id])
+  ExperienciaProfissional         ExperienciaProfissional         @relation("experiencia_profissional_cand", fields: [id_experiencia_profissional_fk], references: [id])
+  Certificacoes                   Certificacoes                   @relation("certificacoes_candidato", fields: [id_certificacoes_fk], references: [id])
+  RedesSocial                     RedesSocial                     @relation("redes_socias_cand", fields: [id_redes_socias_fk ], references: [id])
+  Idioma                          Idioma                          @relation("idiomas_candidato", fields: [id_idiomas_fk], references: [id])
+}
+
+model Vaga{
+  id                              Int @id @default(autoincrement())
+  titulo                          String
+  descricao                       String
+  localizacao                     String
+  id_recrutador_fk                Int
+  id_tipo_contrato_fk             Int
+  id_modalidade_trabalho_fk       Int
+  id_requisitos_qualificacoes_fk  Int
+  id_tipo_emprego_fk              Int
+  id_idiomas_fk                   Int
+  data_criacao                    DateTime
+  latitude                        Float
+  longitude                       Float
+  faixa_salarial                  String
+  salario                         Float
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Recrutador                      Recrutador                      @relation("recrutador_vaga", fields: [id_recrutador_fk], references: [id])
+  TipoContrato                    TipoContrato                    @relation("tipo_contrato_vaga", fields: [id_tipo_contrato_fk], references: [id])
+  ModalidadeTrabalho              ModalidadeTrabalho              @relation("modalidade_trabalho_vaga", fields: [id_modalidade_trabalho_fk], references: [id])
+  RequisitosQualificacoes         RequisitosQualificacoes         @relation("requisitos_qualificacoes_vaga", fields: [id_requisitos_qualificacoes_fk], references: [id])
+  Idioma                          Idioma                          @relation(fields: [id_idiomas_fk], references: [id])
+  Candidatura                     Candidatura[]  @relation("vaga_candidatura")
+}
+
+model Candidatura{
+  id               Int @id @default(autoincrement())
+  id_candidato_fk  Int
+  id_vaga_fk       Int
+  data_candidatura DateTime
+  status           String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  Candidato        Candidato @relation("candidato_candidatura", fields: [id_candidato_fk], references: [id])
+  Vaga             Vaga      @relation("vaga_candidatura", fields: [id_vaga_fk], references: [id])
+  HistoricoCandidatura HistoricoCandidatura[]   @relation("candidatura_historico")
+}
+
+
+model HistoricoCandidatura{
+  id                 Int @id @default(autoincrement())
+  id_candidatura_fk  Int
+  status             String
+  updated_at DateTime @updatedAt
+  created_at DateTime @default(now())
+  Candidatura        Candidatura @relation("candidatura_historico", fields: [id_candidatura_fk], references: [id])
 
 }

@@ -68,7 +68,15 @@ exports.Vaga = async (req, res) => {
 
 exports.VagasRecrutador = async (req, res) => {
     try {
-        res.render('VagaRecrutador'); // Rende a Página escolha
+        res.render('VagasRecrutador'); // Rende a Página vagas
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+exports.CadastroVagas = async (req, res) => {
+    try {
+        res.render('CadastroVagas'); // Rende a Página vagas
     } catch (error) {
         console.log(error);
     }
@@ -93,10 +101,9 @@ exports.view = async(req, res) =>{
         console.log("userController::::::",tipoUsuario)
         res.render('cadastro', {user, tipoUsuario})        
     } catch (error) {
-        
+
     }
 }
-
 
 exports.create = async(req, res) =>{
     try {
