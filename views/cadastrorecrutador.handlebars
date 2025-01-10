@@ -1,42 +1,41 @@
-
-    <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="/CSS/Style.css" />
 
 <body class="pagina-recrutador">
     <div class="container1-recrutador">
         <h1>Cadastro de Recrutador</h1>
-        <form class="form-recrutador">
-            <!-- Nome -->
-            <label for="primeiro-nome">Nome Completo:</label>
-            <input type="text" id="primeiro-nome" name="primeiro-nome" placeholder="Digite seu nome" required>
-            
+        <form class="form-recrutador" method="POST" action="/cadastrorecrutador">
+             <!-- Nome -->
+            <label for="primeiro-nome">Nome Completo</label>
+            <input type="text" name="nome_completo" placeholder="Digite seu nome" required>
+            <input type="hidden" name="id_user_fk" value="{{user.id}}" >
+
             <!-- Localidade -->
             <label for="localização">Localidade:</label>
-            <input type="text" id="localização" name="localização" placeholder="Cidade/Estado" required>
-            
+            <input type="text" name="localizacao" placeholder="Cidade/Estado" required>
+
             <!-- Empresa -->
             <label for="compania">Empresa:</label>
-            <input type="text" id="compania" name="compania" placeholder="Nome da empresa" required>
-            
+            <input type="text" name="empresa" placeholder="Nome da empresa" required>
+
             <!-- Cargo -->
             <label for="cargo">Cargo:</label>
-            <input type="text" id="cargo" name="cargo" placeholder="Ex.: Gerente de Recursos Humanos" required>
-
-            <!-- Campo para setor da empresa -->
-            <label for="industria">Setor da Empresa:</label>
-            <input type="text" id="industria" name="industria" placeholder="Ex.: Tecnologia, Saúde, Educação" required>
+            <input type="text" name="cargo" placeholder="Ex.: Gerente de Recursos Humanos" required>
 
             <!-- Telefone -->
             <label for="Telefone">Telefone:</label>
-            <input type="tel" id="Telefone" name="Telefone" placeholder="Ex.: (+244) 923-234-256" pattern="\(\d{2}\) \d{5}-\d{4}" required>
+            <input type="tel" name="telefone" placeholder="Ex.: (+244) 923-234-256">
 
-            
-            
-           
-            
+
+
+
+
             <!-- Botão de envio -->
-             <a href="/PaginaRecrutadores" class="btn-enviorecrutador">Cadastrar</a>
+            <button type="submit" class="btn-enviorecrutador">Cadastrar</button>
+
+            <a href="/PaginaRecrutadores" class="btn-enviorecrutador">Cadastrar</a>
         </form>
     </div>
-    
+
 </body>
+
 </html>

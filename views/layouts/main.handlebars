@@ -14,28 +14,33 @@
 
 <body>
 
+
+{{> navbar }} <!-- Inclui a partial da barra de navegação -->
+    <main>
+        {{{body}}} <!-- Aqui vai o conteúdo específico da página -->
+    </main>
  <!-- Barra de Navegação -->
-  <header class="pagina-home">
+ 
+  {{!-- <header class="pagina-home">
     <a href="/home" class="logo">Digma Works</a>
   
-  </header>
-  
-<!-- Rodapé -->
+  </header> --}}
+
+
+
+
+
+ 
+
+  {{!-- {{{body}}} --}}
+
+
+
+
+ <!-- Rodapé -->
 <footer class="mt-5 text-center p-3" style="background-color: #333; color: #fff;">
         &copy; 2024 Digma Work - Todos os Direitos Reservados.
     </footer>
-
-
-
-
- 
-
-  {{{body}}}
-
-
-
-
- 
     
     <script src=""></script>
 </body>

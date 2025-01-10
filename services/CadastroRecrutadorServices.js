@@ -4,7 +4,10 @@ const prisma = new PrismaClient()
 const Recrutador = prisma.recrutador
 
 const createRecrutador = async(data) =>{
-    const result = await Recrutador.create({data: {...data}})
+    
+    const result = await Recrutador.create({data: {...data},
+
+})
     return result
 }
 

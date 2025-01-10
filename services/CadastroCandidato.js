@@ -1,16 +1,16 @@
 const {PrismaClient} = require('@prisma/client')
 
 const prisma = new PrismaClient()
-const Recrutador = prisma.recrutador
+const candidato = prisma.candidato
 
-const createRecrutador = async(data) =>{
-    const result = await Recrutador.create({data: {...data}})
+const createCandidato = async(data) =>{
+    const result = await candidato.create({data: {...data}})
     return result
 }
 
-const findAllRecrutador = async() =>{
-    const result = await Recrutador.findMany()    
+const findAllCandidato = async() =>{
+    const result = await candidato.findMany()    
     return result
 }
 
-module.exports = { createRecrutador, findAllRecrutador }
+module.exports = { createCandidato, findAllCandidato }

@@ -1,0 +1,46 @@
+<nav class="pagina-home">
+    <header class="pagina-home">
+        <a href="/home" class="logo">Digma Works</a>
+    </header>
+    {{#if isTeladelogin}}
+    <header class="pagina-home">
+        <a href="/home" class="logo">Digma Works</a>
+    </header>
+    {{/if}}
+
+
+    <!-- Condicional para exibir links diferentes -->
+    {{#if isPaginaRecrutadores}}
+    <header class="pagina-home">
+        <a href="/home" class="logo">Digma Works</a>
+         <div class="buttons">
+            <a href="/Perfil" class="perfil-btn">Meu Perfil</a>
+            <a href="/VagasRecrutador" class="Re-vaga-btn"> Vagas</a>
+            <a href="#messages" class="sms-btn"> Mensagens</a>
+            <a href="#notifications" class="not-btn"> Notificações</a>
+            
+            {{!-- <div class="search-container">
+                <input type="text" placeholder="Pesquisar...">
+            </div> --}}
+
+    </header>
+
+    </div>
+    {{/if}}
+
+    {{#if ishome}}
+    <header class="pagina-home">
+        <a href="/home" class="logo">Digma Works</a>
+        <div class="buttons">
+            <a href="/login" class="login-btn">Entrar</a>
+            <a href="/cadastro" class="register-btn">Cadastrar-se</a>
+        </div>
+    </header>
+
+    {{/if}}
+
+    {{!-- {{#if isUsuario}}
+    <a href="/minhas-vagas">Minhas Vagas</a>
+    <a href="/meu-perfil">Meu Perfil</a>
+    {{/if}} --}}
+</nav>

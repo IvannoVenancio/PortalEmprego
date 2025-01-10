@@ -2,9 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const {engine} = require('express-handlebars');
 const UserRoutes = require('./routes/UserRoutes');
+const path = require('path');
 const app = express()
 
-
+const { upload } = require('./middleware/Multer')
 
 app.engine('handlebars', engine({
   defaultLayout: 'main',

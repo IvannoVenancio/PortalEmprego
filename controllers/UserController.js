@@ -1,9 +1,10 @@
 const { createUser, findAllUsers } = require("../services/UserService")
 const { findAllUserTypes } = require("../services/TipoUsuarioServices")
+const { use } = require("../routes/UserRoutes");
 
 exports.users = async (req, res) => {
     try {
-        res.render('home'); // Rende a página home
+        res.render('home',{ title: 'Home', ishome: true }); // Rende a página home
     } catch (error) {
         console.log(error);
     }
@@ -11,19 +12,19 @@ exports.users = async (req, res) => {
 
 exports.login = async (req, res) => {
     try {
-        res.render('Teladelogin'); // Rende a página de login
+        res.render('Teladelogin',{ title: 'login', isTeladelogin: true }); // Rende a página de login
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.registerPage = async (req, res) => {
-    try {
-        res.render('cadastro'); // Rende a página de login
-    } catch (error) {
-        console.log(error);
-    }
-};
+// exports.registerPage = async (req, res) => {
+//     try {
+//         res.render('cadastro'); // Rende a página de login
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
 
 exports.Paginainicial = async (req, res) => {
@@ -34,21 +35,21 @@ exports.Paginainicial = async (req, res) => {
     }
 };
 
-exports.cadastrocandidato = async (req, res) => {
-    try {
-        res.render('cadastrocandidato'); // Rende a Página escolha
-    } catch (error) {
-        console.log(error);
-    }
-};
+// exports.cadastrocandidato = async (req, res) => {
+//     try {
+//         res.render('cadastrocandidato'); // Rende a Página escolha
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
-exports.cadastrorecrutador = async (req, res) => {
-    try {
-        res.render('cadastrorecrutador'); // Rende a Página escolha
-    } catch (error) {
-        console.log(error);
-    }
-};
+// exports.cadastrorecrutador = async (req, res) => {
+//     try {
+//         res.render('cadastrorecrutador'); // Rende a Página escolha
+//     } catch (error) {
+//         console.log(error);
+//     }
+// };
 
 exports.Perfil = async (req, res) => {
     try {
@@ -84,7 +85,7 @@ exports.CadastroVagas = async (req, res) => {
 
 exports.PaginaRecrutadores = async (req, res) => {
     try {
-        res.render('PaginaRecrutadores'); // Rende a Página escolha
+        res.render('PaginaRecrutadores',{ title: 'Pagina Principal', isPaginaRecrutadores: true }); // Rende a Página escolha
     } catch (error) {
         console.log(error);
     }
@@ -107,11 +108,26 @@ exports.view = async(req, res) =>{
 
 exports.create = async(req, res) =>{
     try {
-        const data = req.body
-        await createUser({...data, user_type: Number(data.user_type)})
-        res.redirect('/cadastrocandidato')
+         const data = req.body
+         const user = await createUser({...data, user_type: Number(data.user_type)})
+         // Verifica o tipo de usuário e redireciona adequadamente
+          if (Number(data.user_type) === 1) {
+             // Tipo 1: Redireciona para Cadastro Candidato
+            console.log("user____", user)
+            // res.redirect('/cadastrocandidato',{user});
+             res.render('cadastrocandidato',{user});
+         } else if (Number(data.user_type) === 3) {
+             // Tipo 2: Redireciona para Cadastro Recrutador
+            //  res.redirect('/cadastrorecrutador',{user});
+             res.render('cadastrorecrutador',{user});
+        } else {
+              // Tipo inválido: Redireciona para uma página de erro ou exibe mensagem
+             res.redirect('/error');
+         } 
         
-    } catch (error) {
-        console.log("error:::", error)
-    }
-}
+     } catch (error) {
+         console.log("error:::", error)
+     }
+ }
+
+

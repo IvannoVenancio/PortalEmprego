@@ -2,24 +2,22 @@
     <!-- Vincula o arquivo CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Header da Página -->
-    <div class="profile-header">
-        <h1>Digma Work</h1>
-        <p>Conectando Profissionais e Oportunidades</p>
-    </div>
-
+<body class="PerfilRecrutador">
+    <div class="container-perfil">
+        
     <!-- Perfil do Usuário -->
-    <div class="container">
-        <div class="profile-info text-center">
-            <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="profile-img">
+    <div class="containerperfil">
+        <div class="perfil-info">
+            <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="perfil-img">
             <h2>Nome do Usuário</h2>
             <p>Cargo Atual • Localidade</p>
-            <button class="btn btn-primary">Editar Perfil</button>
+            <button class="btn btn-primary-perfil">Editar Perfil</button>
         </div>
 
+
+
         <!-- Navegação do Perfil -->
-        <div class="profile-nav">
+        <div class="perfil-nav">
             <nav>
                 <a href="#" class="active">Timeline</a>
                 <a href="#">Sobre</a>
@@ -29,28 +27,75 @@
         </div>
 
         <!-- Caixa de Postagem -->
-        <div class="post-box">
-            <textarea class="post-input" placeholder="No que você está pensando?"></textarea>
-            <div class="actions">
+        <div class="post-box-perfil">
+            <textarea class="post-input-perfil" placeholder="No que você está pensando?"></textarea>
+            <div class="acção-perfil">
                 <button class="btn">Foto</button>
                 <button class="btn">Publicar</button>
             </div>
         </div>
 
-        <!-- Posts -->
-        <div class="post">
-            <div class="post-header">
-                <strong>Nome do Usuário</strong>
-                <small>2 horas atrás</small>
+
+             <!-- Resumo Pessoal -->
+            <div class="perfil-section">
+                <h3>Resumo Pessoal</h3>
+                <p>Profissional com experiência em desenvolvimento de software, focado em tecnologias modernas e práticas ágeis.</p>
+            </div> 
+
+            <!-- Experiência Profissional -->
+            <div class="perfil-section">
+                <h3>Experiência Profissional</h3>
+                <ul>
+                    <li>
+                        <strong>Desenvolvedor Full Stack</strong> - Empresa X (Jan 2020 - Atual)
+                        <p>Desenvolvimento de aplicações web utilizando React e Node.js.</p>
+                    </li>
+                </ul>
             </div>
-            <p>Este é um exemplo de um post no portal Digma Work!</p>
         </div>
 
-        <div class="post">
-            <div class="post-header">
-                <strong>Outro Usuário</strong>
-                <small>1 dia atrás</small>
-            </div>
-            <p>Gostei muito desta plataforma!</p>
+           <!-- Formação Acadêmica -->
+        <div class="perfil-section">
+            <h3>Formação Acadêmica</h3>
+            <ul>
+                <li>
+                    <strong>Bacharelado em Ciência da Computação</strong> - Universidade Z (2014 - 2018)
+                </li>
+                <li>
+                    <strong>Técnico em Informática</strong> - Escola Técnica W (2012 - 2014)
+                </li>
+            </ul>
         </div>
+
+        <!-- Habilidades -->
+        <div class="perfil-section">
+            <h3>Habilidades</h3>
+            <ul class="Habilidades-list">
+                <li>Programação em JavaScript, Python</li>
+                <li>Desenvolvimento Front-End (HTML, CSS, React)</li>
+                <li>Desenvolvimento Back-End (Node.js, SQL, MongoDB)</li>
+                <li>Metodologias Ágeis (Scrum, Kanban)</li>
+            </ul>
+        </div>
+        <!-- Barra Lateral Esquerda -->
+        <aside class="sidebar-leftperfil">
+            <h3>Atalhos</h3>
+            <ul>
+                <li><a href="#">Pagina Principal</a></li>
+                <li><a href="#">Mensagens</a></li>
+                <li><a href="#">Notificações</a></li>
+                <li><a href="#">Configurações</a></li>
+            </ul>
+        </aside>
+
+        <!-- Barra Lateral Direita -->
+        <aside class="sidebar-direitaperfil">
+            <h3>Recomendações</h3>
+            <div class="recommendaçãoperfil">
+                <p><strong>Joana Oliveira</strong>: "Profissional exemplar!"</p>
+            </div>
+            <div class="recommendaçãoperfil">
+                <p><strong>Carlos Silva</strong>: "Recomendo para projetos complexos!"</p>
+            </div>
+        </aside>
     </div>

@@ -59,11 +59,9 @@ model ExperienciaProfissional {
 }
 
 
-model Certificacoes{
-  id           Int @id @default(autoincrement())
-  nome         String
-  instituicoes String
-  ano_obtencao DateTime
+model Certificacoes {
+  id Int @id @default(autoincrement()) 
+  nome String @unique
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   Candidato       Candidato[] @relation("certificacoes_candidato")
@@ -94,6 +92,10 @@ model RedesSocial{
 
 model Recrutador{
   id          Int @id @default(autoincrement())
+  nome_completo  String
+  localizacao    String
+  telefone     Int
+  cargo        String
   id_user_fk  Int
   empresa     String
   created_at DateTime @default(now())
@@ -146,21 +148,24 @@ model Candidato{
   id                              Int @id @default(autoincrement())
   nome_completo                   String
   data_nascimento                 DateTime
+  Cargo_recente                   String
   id_user_fk                      Int
-  id_habilitacoes_literarias_fk   Int
-  id_experiencia_profissional_fk  Int
-  id_certificacoes_fk             Int
-  id_redes_socias_fk              Int
+  id_habilitacoes_literarias_fk   Int?
+  id_experiencia_profissional_fk  Int?
+  id_certificacoes_fk             Int?
+  id_redes_socias_fk              Int?
   id_idiomas_fk                   Int
+
+
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   Candidatura                     Candidatura[] @relation("candidato_candidatura")
   User                            User                            @relation("id_user_candidato", fields: [id_user_fk], references: [id])
-  HabilitacoesLiterarias          HabilitacoesLiterarias          @relation("habilitacoes_literarias_cand", fields: [id_habilitacoes_literarias_fk], references: [id])
-  ExperienciaProfissional         ExperienciaProfissional         @relation("experiencia_profissional_cand", fields: [id_experiencia_profissional_fk], references: [id])
-  Certificacoes                   Certificacoes                   @relation("certificacoes_candidato", fields: [id_certificacoes_fk], references: [id])
-  RedesSocial                     RedesSocial                     @relation("redes_socias_cand", fields: [id_redes_socias_fk ], references: [id])
+  HabilitacoesLiterarias          HabilitacoesLiterarias?          @relation("habilitacoes_literarias_cand", fields: [id_habilitacoes_literarias_fk], references: [id])
+  ExperienciaProfissional         ExperienciaProfissional?        @relation("experiencia_profissional_cand", fields: [id_experiencia_profissional_fk], references: [id])
+  Certificacoes                   Certificacoes?                   @relation("certificacoes_candidato", fields: [id_certificacoes_fk], references: [id])
+  RedesSocial                     RedesSocial?                     @relation("redes_socias_cand", fields: [id_redes_socias_fk ], references: [id])
   Idioma                          Idioma                          @relation("idiomas_candidato", fields: [id_idiomas_fk], references: [id])
 }
 

@@ -15,8 +15,12 @@
     <label for="Cadastrovagas-title">Localização:</label>
     <input type="text"  name="localizacao" placeholder="Ex.: Desenvolvedor Web" required>
 
-    <label for="Cadastrovagas-title">Modalidade de Trabalho:</label>
-    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+    <label for="recrutador">Recrutador:</label>
+  <select id="recrutador" name="id_recrutador_fk">
+    {{#each recrutadores}}
+      <option value="{{id}}">{{nome}}</option>
+    {{/each}}
+  </select>
 
     <label for="Cadastrovagas-title">Requisitos Qualificações:</label>
     <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>

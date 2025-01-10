@@ -3,8 +3,9 @@
 
 
 
-  <h2 class="titulo-cadastro">CRIE SUA CONTA AGORA OPORTUNIDADES ESPERAM POR VOCÊS!</h2>
+  <h2 class="titulo-cadastro" style="margin-top: 80px; font-size: 28px; text-align: center; color: #2c3e50;">CRIE SUA CONTA AGORA!<br>OPORTUNIDADES ESPERAM POR VOCÊ!</h2>
 
+  
 <body class="container-cadastro">
 
   
@@ -12,7 +13,7 @@
     
     <h2>Cadastrar-se</h2>
     
-    <form  action="/create_user" method="post">
+    <form class="cadastro-form" action="/cadastro" method="post">
     
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" required /><br>
@@ -32,28 +33,6 @@
     <p>Já tem uma conta? <a href="/login">Entrar</a></p>
   </div>
 
-<script>
-  document.addEventListener("submit", () => {
-    const form = document.getElementById("create_user"); // Captura o formulário
-    const tipoUsuario = document.getElementById("user_type"); // Captura o select
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault(); // Evita o envio padrão
-
-      // Obtém o tipo de usuário selecionado
-      const escolha = tipoUsuario.value;
-
-      // Redireciona com base na seleção
-      if (escolha === "Candidato") {
-        window.location.href = "/cadastrocandidato"; // Página do candidato
-      } else if (escolha === "Recrutador") {
-        window.location.href = "/cadastrorecrutador"; // Página do recrutador
-      } else {
-        alert("Por favor, selecione uma opção antes de continuar.");
-      }
-    });
-  });
-</script>
 
 
 
