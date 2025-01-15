@@ -61,7 +61,8 @@ app.post('/cadastro', (req, res) => {
           user_type_id:cadastrante.type_of_account},
       
     })
-
+    //Depricated
+    console.log (newUsers)
     const user0 = await prisma.user.findUnique({
       where: {
         email: cadastrante.email,
@@ -101,7 +102,7 @@ app.post('/cadastro', (req, res) => {
 
 
 
-app.post('/cadastrocandidato',upload.single('form_file'), (req, res) => {
+app.post('/cadastrocandidato',upload.single('file'), (req, res) => {
   // Access form fields from req.body
 
 
