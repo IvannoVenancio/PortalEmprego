@@ -94,7 +94,7 @@ model Recrutador{
   id          Int @id @default(autoincrement())
   nome_completo  String
   localizacao    String
-  telefone     Int
+  telefone     String
   cargo        String
   id_user_fk  Int
   empresa     String

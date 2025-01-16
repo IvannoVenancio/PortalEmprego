@@ -84,7 +84,7 @@ CREATE TABLE `Recrutador` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `nome_completo` VARCHAR(191) NOT NULL,
     `localizacao` VARCHAR(191) NOT NULL,
-    `telefone` INTEGER NOT NULL,
+    `telefone` VARCHAR(191) NOT NULL,
     `cargo` VARCHAR(191) NOT NULL,
     `id_user_fk` INTEGER NOT NULL,
     `empresa` VARCHAR(191) NOT NULL,
@@ -141,7 +141,7 @@ CREATE TABLE `Notificacoes` (
 CREATE TABLE `Candidato` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `nome_completo` VARCHAR(191) NOT NULL,
-    `data_nascimento` DATETIME(3) NOT NULL,
+    `data_nascimento` VARCHAR(191) NOT NULL,
     `Cargo_recente` VARCHAR(191) NOT NULL,
     `id_user_fk` INTEGER NOT NULL,
     `id_habilitacoes_literarias_fk` INTEGER NULL,

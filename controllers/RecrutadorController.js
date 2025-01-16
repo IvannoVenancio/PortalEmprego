@@ -13,7 +13,7 @@ exports.view = async(req, res) =>{
 exports.create = async(req, res) =>{
     try {
         const data = req.body
-        await createRecrutador({...data})
+        await createRecrutador({...data,id_user_fk: Number(data.id_user_fk)})
         res.redirect('/PaginaRecrutadores')
         
     } catch (error) {
