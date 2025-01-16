@@ -5,6 +5,10 @@ const TipoUsuarioController = require('../controllers/TipoUsuarioController')
 const CadastrovagasController = require('../controllers/CadastrovagasController')
 const CandidatoController = require('../controllers/CandidatoController')
 const RecrutadorController = require('../controllers/RecrutadorController')
+const { upload } = require('../middleware/multer')
+const path = require('path');
+
+
 
 // Rota para a página de home
 indexRoutes.get('/home',UserController.users)
@@ -28,7 +32,7 @@ indexRoutes.get('/Paginainicial', UserController.Paginainicial)
 
 // Rota para a página de cadastrocandidato
 indexRoutes.get('/cadastrocandidato', CandidatoController.view)
-indexRoutes.post('/cadastrocandidato', CandidatoController.create)
+indexRoutes.post('/cadastrocandidato',upload.single('file'), CandidatoController.create)
 
 // Rota para a página de cadastrocandidato
 indexRoutes.get('/cadastrorecrutador', RecrutadorController.view)
