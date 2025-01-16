@@ -1,4 +1,6 @@
 const {PrismaClient} = require('@prisma/client')
+const { upload } = require('../middleware/multer')
+const path = require('path');
 
 const prisma = new PrismaClient()
 const candidato = prisma.candidato
