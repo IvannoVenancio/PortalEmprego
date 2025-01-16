@@ -26,7 +26,7 @@ const { findAllIdioma } = require("../services/IdiomaServices"); // Importa o se
 exports.create = async(req, res) =>{
     try {
         const data = req.body
-        await createCandidato(data)
+        await createCandidato({...data, id_user_fk: Number(data.id_user_fk)})
         res.redirect('/Paginainicial')
         
     } catch (error) {

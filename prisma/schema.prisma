@@ -74,8 +74,8 @@ model Idioma{
   nivel  String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
-  Candidato   Candidato[] @relation("idiomas_candidato")
-  Vaga        Vaga[] @relation()
+//  Candidato   Candidato[] @relation("idiomas_candidato")
+//  Vaga        Vaga[] @relation()
 }
 
 
@@ -147,14 +147,15 @@ model Notificacoes {
 model Candidato{
   id                              Int @id @default(autoincrement())
   nome_completo                   String
-  data_nascimento                 DateTime
+//  data_nascimento                 DateTime
+  data_nascimento                 String
   Cargo_recente                   String
   id_user_fk                      Int
   id_habilitacoes_literarias_fk   Int?
   id_experiencia_profissional_fk  Int?
   id_certificacoes_fk             Int?
   id_redes_socias_fk              Int?
-  id_idiomas_fk                   Int
+//  id_idiomas_fk                   Int
 
 
 
@@ -166,7 +167,7 @@ model Candidato{
   ExperienciaProfissional         ExperienciaProfissional?        @relation("experiencia_profissional_cand", fields: [id_experiencia_profissional_fk], references: [id])
   Certificacoes                   Certificacoes?                   @relation("certificacoes_candidato", fields: [id_certificacoes_fk], references: [id])
   RedesSocial                     RedesSocial?                     @relation("redes_socias_cand", fields: [id_redes_socias_fk ], references: [id])
-  Idioma                          Idioma                          @relation("idiomas_candidato", fields: [id_idiomas_fk], references: [id])
+//  Idioma                          Idioma                          @relation("idiomas_candidato", fields: [id_idiomas_fk], references: [id])
 }
 
 model Vaga{
@@ -179,7 +180,7 @@ model Vaga{
   id_modalidade_trabalho_fk       Int
   id_requisitos_qualificacoes_fk  Int
   id_tipo_emprego_fk              Int
-  id_idiomas_fk                   Int
+//  id_idiomas_fk                   Int
   data_criacao                    DateTime
   latitude                        Float
   longitude                       Float
@@ -191,7 +192,7 @@ model Vaga{
   TipoContrato                    TipoContrato                    @relation("tipo_contrato_vaga", fields: [id_tipo_contrato_fk], references: [id])
   ModalidadeTrabalho              ModalidadeTrabalho              @relation("modalidade_trabalho_vaga", fields: [id_modalidade_trabalho_fk], references: [id])
   RequisitosQualificacoes         RequisitosQualificacoes         @relation("requisitos_qualificacoes_vaga", fields: [id_requisitos_qualificacoes_fk], references: [id])
-  Idioma                          Idioma                          @relation(fields: [id_idiomas_fk], references: [id])
+//  Idioma                          Idioma                          @relation(fields: [id_idiomas_fk], references: [id])
   Candidatura                     Candidatura[]  @relation("vaga_candidatura")
 }
 

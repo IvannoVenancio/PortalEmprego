@@ -111,12 +111,12 @@ exports.create = async(req, res) =>{
          const data = req.body
          const user = await createUser({...data, user_type: Number(data.user_type)})
          // Verifica o tipo de usuário e redireciona adequadamente
-          if (Number(data.user_type) === 1) {
+          if (Number(data.user_type) === 2) {
              // Tipo 1: Redireciona para Cadastro Candidato
             console.log("user____", user)
             // res.redirect('/cadastrocandidato',{user});
              res.render('cadastrocandidato',{user});
-         } else if (Number(data.user_type) === 3) {
+         } else if (Number(data.user_type) === 1) {
              // Tipo 2: Redireciona para Cadastro Recrutador
             //  res.redirect('/cadastrorecrutador',{user});
              res.render('cadastrorecrutador',{user});
