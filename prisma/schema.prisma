@@ -94,10 +94,10 @@ model Recrutador{
   id          Int @id @default(autoincrement())
   nome_completo  String
   localizacao    String
-  telefone     Int
-  cargo        String
-  id_user_fk  Int
-  empresa     String
+  telefone       String
+  cargo          String
+  id_user_fk     Int
+  empresa        String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   User        User     @relation("id_user_recrutador", fields: [id_user_fk], references: [id])
@@ -154,8 +154,7 @@ model Candidato{
   id_experiencia_profissional_fk  Int?
   id_certificacoes_fk             Int?
   id_redes_socias_fk              Int?
-  id_idiomas_fk                   Int
-
+  id_idiomas_fk                   Int?
 
 
   created_at DateTime @default(now())
@@ -166,7 +165,7 @@ model Candidato{
   ExperienciaProfissional         ExperienciaProfissional?        @relation("experiencia_profissional_cand", fields: [id_experiencia_profissional_fk], references: [id])
   Certificacoes                   Certificacoes?                   @relation("certificacoes_candidato", fields: [id_certificacoes_fk], references: [id])
   RedesSocial                     RedesSocial?                     @relation("redes_socias_cand", fields: [id_redes_socias_fk ], references: [id])
-  Idioma                          Idioma                          @relation("idiomas_candidato", fields: [id_idiomas_fk], references: [id])
+  Idioma                          Idioma?                          @relation("idiomas_candidato", fields: [id_idiomas_fk], references: [id])
 }
 
 model Vaga{
@@ -177,20 +176,20 @@ model Vaga{
   id_recrutador_fk                Int
   id_tipo_contrato_fk             Int
   id_modalidade_trabalho_fk       Int
-  id_requisitos_qualificacoes_fk  Int
-  id_tipo_emprego_fk              Int
+  id_requisitos_qualificacoes_fk  Int?
+  tipo_emprego                    String
   id_idiomas_fk                   Int
   data_criacao                    DateTime
-  latitude                        Float
-  longitude                       Float
-  faixa_salarial                  String
+  latitude                        Float?
+  longitude                       Float?
+  faixa_salarial                  String?
   salario                         Float
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   Recrutador                      Recrutador                      @relation("recrutador_vaga", fields: [id_recrutador_fk], references: [id])
   TipoContrato                    TipoContrato                    @relation("tipo_contrato_vaga", fields: [id_tipo_contrato_fk], references: [id])
   ModalidadeTrabalho              ModalidadeTrabalho              @relation("modalidade_trabalho_vaga", fields: [id_modalidade_trabalho_fk], references: [id])
-  RequisitosQualificacoes         RequisitosQualificacoes         @relation("requisitos_qualificacoes_vaga", fields: [id_requisitos_qualificacoes_fk], references: [id])
+  RequisitosQualificacoes         RequisitosQualificacoes?         @relation("requisitos_qualificacoes_vaga", fields: [id_requisitos_qualificacoes_fk], references: [id])
   Idioma                          Idioma                          @relation(fields: [id_idiomas_fk], references: [id])
   Candidatura                     Candidatura[]  @relation("vaga_candidatura")
 }

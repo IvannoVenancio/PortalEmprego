@@ -9,30 +9,35 @@
     <label for="Cadastrovagas-title">Título da Vaga:</label>
     <input type="text" name="titulo" placeholder="Ex.: Desenvolvedor Web" required>
 
-    <label for="Cadastrovagas-title">Descrição:</label>
-    <input type="text" name="descricao" placeholder="Ex.: Desenvolvedor Web" required>
+    {{!-- <label for="Cadastrovagas-title">Descrição:</label>
+    <input type="text" name="descricao" placeholder="Ex.: Desenvolvedor Web" required> --}}
 
     <label for="Cadastrovagas-title">Localização:</label>
     <input type="text"  name="localizacao" placeholder="Ex.: Desenvolvedor Web" required>
 
-    <label for="recrutador">Recrutador:</label>
+    <label for="recrutador">Empresa:</label>
   <select id="recrutador" name="id_recrutador_fk">
     {{#each recrutadores}}
       <option value="{{id}}">{{nome}}</option>
     {{/each}}
   </select>
 
-    <label for="Cadastrovagas-title">Requisitos Qualificações:</label>
-    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+    {{!-- <label for="Cadastrovagas-title">Requisitos Qualificações:</label>
+    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required> --}}
 
     <label for="Cadastrovagas-title">Tipo de Emprego:</label>
     <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
 
-    <label for="Cadastrovagas-title">Idiomas:</label>
-    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+    <label for="Idioma ">Idioma:</label>
+            <select id="idioma" name="id_idiomas_fk">
+                <option value="">Selecione um idioma</option>
+                {{#each idiomas}}
+                <option value="{{id}}">{{nome}}</option>
+                {{/each}}
+            </select>
 
-    <label for="cadastrovagas-local">Localização:</label>
-    <input type="text" id="cadastrovagas-local" name="job_location" placeholder="Ex.: São Paulo, SP" required>
+    {{!-- <label for="cadastrovagas-local">Localização:</label>
+    <input type="text" id="cadastrovagas-local" name="job_location" placeholder="Ex.: São Paulo, SP" required> --}}
 
     <label for="job-status">Status:</label>
     <select id="job-status" name="job_status">

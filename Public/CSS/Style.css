@@ -206,7 +206,7 @@ body.tela-login {
 }
 
 /* Campos de input */
-.container-telalogin input[type="text"],
+.container-telalogin input[type="email"],
 .container-telalogin input[type="password"] {
   width: 100%;
   padding: 12px;
@@ -214,6 +214,12 @@ body.tela-login {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.container-telalogin label{
+  font-size: 14px;
+  margin-bottom: 5px;
+  text-align: left;
 }
 
 /* Botão de login */
@@ -1186,6 +1192,8 @@ body.CadastroVagas {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 87px;
+
 }
 
 /* Título */
@@ -1404,13 +1412,23 @@ body.PerfilRecrutador {
   margin: 0;
 }
 
-.container-perfil {
-  /* display: flex; */
+/* .container-perfil {
+  /* display: flex; 
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+} */
+
+/* Contêiner que organiza o layout */
+.container-perfil {
+  display: flex; /* Elementos filhos lado a lado */
+  justify-content: space-between; /* Espaçamento uniforme entre as colunas */
+  align-items: flex-start; /* Alinhamento ao topo */
+  gap: 20px; /* Espaçamento entre os elementos */
+  margin-top: 100px; /* Espaço abaixo do cabeçalho */
 }
+
 
 /* Conteúdo Principal */
 .containerperfil {
@@ -1424,7 +1442,7 @@ body.PerfilRecrutador {
 
 /* Barras Laterais */
 .sidebar-leftperfil, .sidebar-direitaperfil {
-  width: 200px;
+  width: 291px;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 15px;
@@ -1432,6 +1450,7 @@ body.PerfilRecrutador {
   position: sticky;
   top: 20px; /* Fixa a barra lateral ao rolar */
   height: fit-content;
+  margin: 10px;
 }
 
 .sidebar-leftperfil h3, .sidebar-direitaperfil h3 {
@@ -1512,7 +1531,37 @@ body.PerfilRecrutador {
   padding: 5px 10px;
   border-radius: 5px;
   font-size: 0.9rem;
+} 
+
+
+/* Formulário de entrada */
+
+
+/* .input-field {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  resize: vertical;
 } */
+
+.btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
+
 
 
 

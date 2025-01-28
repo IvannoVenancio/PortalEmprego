@@ -10,14 +10,9 @@ const RecrutadorController = require('../controllers/RecrutadorController')
 indexRoutes.get('/home',UserController.users)
 
 // Rota para a página de login
-indexRoutes.get('/login', UserController.login)
+indexRoutes.post('/login', UserController.login)
+indexRoutes.get('/login', UserController.getlogin)
 
-
-
-// indexRoutes.get('/', UserController.view)
-// indexRoutes.post('/create_user', UserController.create)
-
-// indexRoutes.post('/cadastrocandidato', UserController.create)
 
 // Rota para a página de cadastro
 indexRoutes.get('/cadastro', UserController.view)

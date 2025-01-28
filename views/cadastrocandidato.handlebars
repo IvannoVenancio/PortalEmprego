@@ -6,41 +6,38 @@
         <h1>Cadastro de Candidato</h1>
 
 
-        <form class="candidato-form" action="/cadastrocandidato" method="POST" >
+        <form class="candidato-form" action="/cadastrocandidato" method="POST">
+            
+            
             <!-- Nome -->
-            <label for="primeiro-nome">Nome Completo</label>
+            <label for="nome_completo">Nome Completo</label>
             <input type="text" name="nome_completo" placeholder="Digite seu nome" required>
             <input type="hidden" name="id_user_fk" value="{{user.id}}" >
-
             <!-- Data de Nascimento -->
-            <label for="localização">Data de Nascimento:</label>
+            <label for="data_nascimento">Data de Nascimento:</label>
             <input type="date" name="data_nascimento" placeholder="Data de Nascimento" required>
 
-            <label for="morada">Certificações Literárias(PDF):</label>
-            <input type="file" id="certificacao" name="id_certificacoes_fk" required>
+            <label for="Cargo_recente">Cargo Recente:</label>
+            <input type="text" name="Cargo_recente" placeholder="Exemplo: programador frontend..." required>
 
-            <label for="Idioma ">Idioma:</label>
+            {{!-- <label for="id_certificacoes_fk">Certificações Literárias(PDF):</label>
+            <input type="file" id="certificacao" name="id_certificacoes_fk" required> --}}
+
+            {{!-- <label for="id_idiomas_fk">Idioma:</label>
             <select id="idioma" name="id_idiomas_fk">
                 <option value="">Selecione um idioma</option>
                 {{#each idiomas}}
                 <option value="{{id}}">{{nome}}</option>
                 {{/each}}
-            </select>
+            </select> --}}
 
-            {{!-- <label for="Idioma">Idioma:</label>
-<select id="idioma" name="id_idiomas_fk" required>
-    <option value="">Selecione um idioma</option>
-    {{#each idiomas}}
-        <option value="{{this.id}}">{{this.tipo}}</option>
-    {{/each}}
-</select> --}}
 
 
             <button type="submit" class="btn-submit">Enviar Cadastro</button>
 
-            <!-- Botão de envio -->
-            {{!-- <a href="/Paginainicial" class="btn-enviocadastro">Enviar Cadastro</a> --}}
-            <!-- <button type="submit" class="btn-submit">Enviar Cadastro</button> -->
+            {{!-- <!-- Botão de envio -->
+             <a href="/Paginainicial" class="btn-enviocadastro">Enviar Cadastro</a> 
+            <!-- <button type="submit" class="btn-submit">Enviar Cadastro</button> --> --}}
         </form>
     </div>
 

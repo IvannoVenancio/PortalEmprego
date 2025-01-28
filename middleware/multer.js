@@ -6,7 +6,8 @@ const path = require('path');
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // Define o diretório onde os arquivos serão armazenados
-    cb(null, 'Public_uploads');
+    const uploadPath = path.join(__dirname, '../public/Public_uploads'); // Caminho absoluto
+    cb(null, uploadPath);
   },
   filename: (req, file, cb) => {
     // Define o nome do arquivo (exemplo: timestamp-nomeoriginal.extensão)
