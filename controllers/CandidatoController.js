@@ -1,4 +1,4 @@
-const { createCandidato, findAllCandidato } = require("../services/CadastroCandidato");
+const { createCandidato, findAllCandidato } = require("../services/Candidato");
 const { findAllIdioma } = require("../services/IdiomaServices"); // Importa o serviço de idiomas
 
 

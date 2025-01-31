@@ -6,11 +6,12 @@ const path = require('path');
 const app = express()
 const session = require('express-session');
 
+
 app.use(session({
     secret: 'seu-segredo-seguro',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true } 
+    cookie: { secure: false } 
 }));
 
 
@@ -23,8 +24,6 @@ app.engine('handlebars', engine({
     allowProtoMethodsByDefault: true
    
   }
-
-  
 
 }));
 app.set('view engine', 'handlebars');

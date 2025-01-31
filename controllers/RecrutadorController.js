@@ -1,4 +1,4 @@
-const { createRecrutador, findAllRecrutador } = require("../services/CadastroRecrutadorServices")
+const { createRecrutador, findAllRecrutador } = require("../services/RecrutadorServices")
 
 exports.view = async(req, res) =>{
     try {

@@ -1,7 +1,8 @@
 const { createUser, findAllUsers } = require("../services/UserService")
 const bcrypt = require('bcryptjs');
 const { findUserByEmail } = require("../services/UserService"); // Adicione uma função para buscar o usuário pelo email
-const { findAllUserTypes } = require("../services/TipoUsuarioServices")
+const { findAllUserTypes } = require("../services/TipoUsuarioServices");
+const { findCandidatoById } = require("../services/Candidato");
 
 
 exports.users = async (req, res) => {
@@ -14,7 +15,14 @@ exports.users = async (req, res) => {
 
 exports.Paginainicial = async (req, res) => {
     try {
-        res.render('Paginainicial'); // Rende a Página escolha
+        console.log("Req.session::::::", req.session)
+        res.render('Paginainicial' , { 
+            title: 'Paginainicial', 
+            isPaginainicial: true, 
+            user: req.session.user 
+        }
+    );
+     // Rende a Página escolha
     } catch (error) {
         console.log(error);
     }
@@ -23,7 +31,11 @@ exports.Paginainicial = async (req, res) => {
 
 exports.Perfil = async (req, res) => {
     try {
-        res.render('Perfil'); // Rende a Página escolha
+        const userId = req.session.user.id
+        console.log("userId::::", userId)
+        const candidato = await findCandidatoById(userId)
+        console.log("candidato::::", candidato)
+        res.render('Perfil', {candidato}); // Rende a Página escolha
     } catch (error) {
         console.log(error);
     }
@@ -55,7 +67,10 @@ exports.CadastroVagas = async (req, res) => {
 
 exports.PaginaRecrutadores = async (req, res) => {
     try {
-        res.render('PaginaRecrutadores', { title: 'Pagina Principal', isPaginaRecrutadores: true }); // Rende a Página escolha
+        res.render('PaginaRecrutadores', { 
+            title: 'Pagina Principal',
+             isPaginaRecrutadores: true,
+             user: req.session.user }); // Rende a Página escolha
     } catch (error) {
         console.log(error);
     }
@@ -115,6 +130,8 @@ exports.login = async (req, res) => {
         }
         // Busca o usuário pelo email
         const user = await findUserByEmail(email);
+        console.log("erro email:::",user)
+    
 
         if (!user) {
             // Usuário não encontrado
@@ -129,8 +146,13 @@ exports.login = async (req, res) => {
             return res.status(401).send("Usuário ou senha inválidos.");
         }
 
+       
         // Armazena informações do usuário na sessão
         req.session.user = { id: user.id, email: user.email, user_type: user.user_type };
+       
+
+
+        console.log(" Sessão Criada:", req.session);
 
         // Redireciona para a página inicial do tipo de usuário
         if (user.user_type === 1) {
@@ -144,4 +166,13 @@ exports.login = async (req, res) => {
         console.error("Erro ao fazer login:", error);
         res.status(500).send("Erro no servidor.");
     }
+};
+
+exports.logout = (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error("Erro ao fazer logout:", err);
+        }
+        res.redirect('/login');
+    });
 };

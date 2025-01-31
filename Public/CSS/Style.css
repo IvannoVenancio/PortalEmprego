@@ -96,10 +96,10 @@ header.pagina-home {
 
 /* Contêiner para a imagem */
 .image-container {
-  display: flex; /* Flexbox para alinhamento */
-  justify-content: flex-start; /* Alinha a imagem à esquerda */
-  align-items: center; /* Centraliza verticalmente a imagem */
-  padding: 20px; /* Espaçamento interno para melhor estética */
+  display: flex; /* Usa flexbox */
+  flex-direction: column; /* Empilha as imagens verticalmente */
+  align-items: center; /* Centraliza as imagens horizontalmente */
+  padding: 20px; /* Espaçamento interno */
 }
 
 /* Estilo da Imagem */
@@ -108,10 +108,8 @@ header.pagina-home {
   max-height: 300px; /* Define a altura máxima */
   object-fit: cover; /* Evita distorções */
   border-radius: 8px; /* Bordas arredondadas */
-  margin-left: -20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-  margin-top: -481px;
-  margin-left: 681px;
+  margin-bottom: 20px; /* Adiciona espaçamento entre as imagens */
   display: block;
 }
 

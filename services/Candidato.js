@@ -12,5 +12,9 @@ const findAllCandidato = async() =>{
     const result = await candidato.findMany()    
     return result
 }
+const findCandidatoById = async(userId) =>{
+    const result = await candidato.findFirst({where:{id_user_fk: userId}})    
+    return result
+}
 
-module.exports = { createCandidato, findAllCandidato }
+module.exports = { createCandidato, findAllCandidato,findCandidatoById }

@@ -16,4 +16,9 @@ const findAllRecrutador = async() =>{
     return result
 }
 
-module.exports = { createRecrutador, findAllRecrutador }
+const findRecrutadorById = async(userId) =>{
+    const result = await Recrutador.findFirst({where:{id_user_fk: userId}})    
+    return result
+}
+
+module.exports = { createRecrutador, findAllRecrutador,findRecrutadorById }

@@ -9,16 +9,39 @@
     {{/if}}
 
 
+
+
+
+    <!-- Condicional para exibir links diferentes -->
+    {{#if isPaginainicial}}
+    <header class="pagina-home">
+        <a href="/home" class="logo">Digma Works</a>
+        <div class="buttons">
+            <a href="/Perfil" class="perfil-btn"> Meu Perfil</a>
+            <a href="/Vaga" class="Re-vaga-btn">Vagas</a>
+            <a href="#messages" class="sms-btn"> Mensagens</a>
+            <a href="#notifications" class="not-btn"> Notificações</a>
+            <a href="/logout" class="not-btns"> Sair</a>
+            <!-- Barra de pesquisa -->
+            <input type="text" placeholder="Pesquisar no portal...">
+            <button><i class="fas fa-search"></i></button>
+       
+
+    </header>
+</div>
+    {{/if}}
+
+
     <!-- Condicional para exibir links diferentes -->
     {{#if isPaginaRecrutadores}}
     <header class="pagina-home">
         <a href="/home" class="logo">Digma Works</a>
-         <div class="buttons">
+        <div class="buttons">
             <a href="/Perfil" class="perfil-btn">Meu Perfil</a>
             <a href="/VagasRecrutador" class="Re-vaga-btn"> Vagas</a>
             <a href="#messages" class="sms-btn"> Mensagens</a>
             <a href="#notifications" class="not-btn"> Notificações</a>
-            
+
             {{!-- <div class="search-container">
                 <input type="text" placeholder="Pesquisar...">
             </div> --}}

@@ -2,25 +2,23 @@
  
     
 <body class="Paginainicial">
-    {{!-- <!-- Cabeçalho com barra de navegação -->
-    <header class="nav-paginainicial">
-        <div class="logopag-candidato">Digma<span>Works</span></div>
-        <div class="pesquisapag-candidato">
-            <input type="text" placeholder="Pesquisar no portal...">
-            <button><i class="fas fa-search"></i></button>
-        </div>
-        
-    </header> --}}
+   
 
     <!-- Seção principal -->
     <main class="container-paginaprincipal">
         <!-- Coluna da esquerda -->
         <aside class="Barralateral-esquerda">
+            <div class="perfil-usuario">
+                
+                <h4>{{user.email}}</h4>
+            </div>
             <ul>
                 <li><a href="/Perfil"><i class="fas fa-user"></i> Meu Perfil</a></li>
                 <li><a href="/Vaga"><i class="fas fa-briefcase"></i> Vagas</a></li>
                 <li><a href="#messages"><i class="fas fa-envelope"></i> Mensagens</a></li>
                 <li><a href="#notifications"><i class="fas fa-bell"></i> Notificações</a></li>
+                <li><a href="/logout"><i class="fas fa-bell"></i> Sair</a></li>
+                
             </ul>
         </aside>
 

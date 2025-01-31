@@ -5,6 +5,7 @@ const TipoUsuarioController = require('../controllers/TipoUsuarioController')
 const CadastrovagasController = require('../controllers/CadastrovagasController')
 const CandidatoController = require('../controllers/CandidatoController')
 const RecrutadorController = require('../controllers/RecrutadorController')
+const isAuthenticated = require('../middleware/auth');
 
 // Rota para a página de home
 indexRoutes.get('/home',UserController.users)
@@ -13,13 +14,15 @@ indexRoutes.get('/home',UserController.users)
 indexRoutes.post('/login', UserController.login)
 indexRoutes.get('/login', UserController.getlogin)
 
+// Rota para sair da pagina
+indexRoutes.get('/logout', UserController.logout)
 
 // Rota para a página de cadastro
 indexRoutes.get('/cadastro', UserController.view)
 indexRoutes.post('/cadastro', UserController.create)
 
 // Rota para a página de paginainicial
-indexRoutes.get('/Paginainicial', UserController.Paginainicial)
+indexRoutes.get('/Paginainicial',isAuthenticated, UserController.Paginainicial)
 
 // Rota para a página de cadastrocandidato
 indexRoutes.get('/cadastrocandidato', CandidatoController.view)
@@ -30,10 +33,10 @@ indexRoutes.get('/cadastrorecrutador', RecrutadorController.view)
 indexRoutes.post('/cadastrorecrutador', RecrutadorController.create)
 
 
-indexRoutes.get('/paginaRecrutadores', UserController.PaginaRecrutadores)
+indexRoutes.get('/paginaRecrutadores',isAuthenticated, UserController.PaginaRecrutadores)
 
 // Rota para a página de Perfil
-indexRoutes.get('/Perfil', UserController.Perfil);
+indexRoutes.get('/Perfil',  isAuthenticated, UserController.Perfil);
 
 // Rota para a página de Vagas
 indexRoutes.get('/Vaga', UserController.Vaga);
