@@ -3,7 +3,6 @@ const { createUserType, findAllUserTypes } = require("../services/TipoUsuarioSer
 exports.view = async(req, res) =>{
     try {
         const TipoUsuario = await findAllUserTypes()
-        console.log("TipoUsuario::::", TipoUsuario)
         res.render('TipoUsuario', {TipoUsuario})        
     } catch (error) {
         

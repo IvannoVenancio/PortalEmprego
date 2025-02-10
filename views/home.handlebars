@@ -24,32 +24,36 @@
     </div>
   </div>
 
-  <!-- Imagem Lado Direito -->
+    {{!-- Imagem Lado Direito 
   <div class="image-container">
     <img src="/img/OPORTUNIDADES.png">
-    {{!-- <img src="/img/Eficiência.png"> 
-    <img src="/img/Disposição.png"> --}}
+     <img src="/img/Eficiência.png"> 
+    <img src="/img/Disposição.png"> 
 
 
-  </div>
+  </div> 
 
 
 
-  <section class="vagas-destaque">
+   <section class="vagas-destaque">
     <h2>Vagas em Destaque</h2>
-    <div class="vagas-container">
-      {{#each vagas}}
-      <div class="vagas-card">
-        <h3>{{title}}</h3>
-        <p><strong>Empresa:</strong> {{company}}</p>
-        <p><strong>Local:</strong> {{location}}</p>
-        <p><strong>Descrição:</strong> {{description}}</p>
-        <a href="/vaga/{{id}}" class="details-btn">Ver detalhes</a>
+    <div class="vagas-container"> --}}
+
+
+      {{#each Vaga}}
+      <div class="Vagasdestaques">
+          <h3>{{titulo}}</h3>
+          <p><strong>Descrição:</strong> {{descricao}}</p>
+          <p><strong>Localização:</strong> {{localizacao}}</p>
+          <p><strong>Salário:</strong> KZ {{salario}}</p>
+          <p><strong>Tipo de contrato:</strong> {{tipoContrato}}</p>
+          <hr>
+        </div>
       </div>
       {{/each}}
-    </div>
-  </section>
 
+  
+  
 
 
 </body>

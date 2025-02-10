@@ -1,7 +1,7 @@
 const {PrismaClient} = require('@prisma/client')
 
 const prisma = new PrismaClient()
-const Vaga = prisma.Vaga
+const Vaga = prisma.vaga
 
 const createVagas = async(data) =>{
     const result = await Vaga.create({data: {...data}})
@@ -13,5 +13,11 @@ const findAllVagas = async() =>{
     return result
 }
 
-module.exports = { createVagas, findAllVagas }
+const findVagasById = async(userId) =>{
+    const result = await Vaga.findMany()    
+    return result
+}
+
+
+module.exports = { createVagas, findAllVagas,findVagasById }
 

@@ -3,7 +3,6 @@ const { createRecrutador, findAllRecrutador } = require("../services/RecrutadorS
 exports.view = async(req, res) =>{
     try {
         const Recrutador = await findAllRecrutador()
-        console.log(Recrutador) 
         res.render('cadastrorecrutador', {Recrutador})        
     } catch (error) {
         

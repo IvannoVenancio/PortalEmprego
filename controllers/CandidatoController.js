@@ -1,13 +1,10 @@
 const { createCandidato, findAllCandidato } = require("../services/Candidato");
-const { findAllIdioma } = require("../services/IdiomaServices"); // Importa o serviço de idiomas
 
 
 exports.view = async (req, res) => {
     try {
         const candidato = await findAllCandidato()
-        const idiomas = await findAllIdioma() // Busca os idiomas
-        console.log(candidato)
-        res.render('cadastrocandidato',{candidato, idiomas })
+        res.render('cadastrocandidato',{candidato})
     } catch (error) {
         console.log(error);
     }

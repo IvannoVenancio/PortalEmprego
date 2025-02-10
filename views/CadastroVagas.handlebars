@@ -1,63 +1,79 @@
-<link rel="stylesheet" href="/CSS/Style.css"/>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Vaga</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="vagasRe">
+  <div class="form-container">
+    <h1>Nova Vaga</h1>
+    <form id="formVaga" action="/CadastroVagas" method="POST">
+      <div class="form-group">
+        <label for="titulo">Título da Vaga:</label>
+        <input type="text" name="titulo" placeholder="Nome da vaga" required>
+
+        <label for="descricao">Descrição da Vaga:</label>
+        <textarea name="descricao" rows="3" placeholder="Descreva a vaga" required></textarea>
+
+        <label for="localizacao">Localização:</label>
+        <input type="text" name="localizacao" required>
+
+        <label for="data_criacao">Data de Criação:</label>
+        <input type="date" name="data_criacao" placeholder="Data de Criação" required>
 
 
-     
-<body class="CadastroVagas">
-  <form class="formVagas" action="/cadastro_vagas" method="post">
-    <h2>Criar Nova Vaga</h2>
+        <label for="id_recrutador_fk">Recrutador:</label>
+        <input type="number" name="id_recrutador_fk" value="{{Recrutador.id}}">
 
-    <label for="Cadastrovagas-title">Título da Vaga:</label>
-    <input type="text" name="titulo" placeholder="Ex.: Desenvolvedor Web" required>
+        <label for="id_tipo_contrato_fk">Tipo de Contrato:</label>
+        <select  name="id_tipo_contrato_fk">
+          <option value="">Selecione o Tipo de Contrato</option>
+          {{#each tipoContrato}}
+          <option value="{{id}}">{{descricao}}</option>
+          {{/each}}
+        </select>
 
-    {{!-- <label for="Cadastrovagas-title">Descrição:</label>
-    <input type="text" name="descricao" placeholder="Ex.: Desenvolvedor Web" required> --}}
+        <label for="id_modalidade_trabalho_fk">Modalidade de Trabalho:</label>
+        <select name="id_modalidade_trabalho_fk">
+          <option value="">Tipo de Modalidade</option>
+          {{#each modalidadeTrabalho}}
+          <option value="{{id}}">{{descricao}}</option>
+          {{/each}}
+        </select>
 
-    <label for="Cadastrovagas-title">Localização:</label>
-    <input type="text"  name="localizacao" placeholder="Ex.: Desenvolvedor Web" required>
+        <label for="id_requisitos_qualificacoes_fk">Modalidade de Trabalho:</label>
+        <select name="id_requisitos_qualificacoes_fk">
+          <option value="">Requisitos e Qualificações</option>
+          {{#each requisitosQualificacoes}}
+          <option value="{{id}}">{{descricao}}</option>
+          {{/each}}
+        </select>
 
-    <label for="recrutador">Empresa:</label>
-  <select id="recrutador" name="id_recrutador_fk">
-    {{#each recrutadores}}
-      <option value="{{id}}">{{nome}}</option>
-    {{/each}}
-  </select>
 
-    {{!-- <label for="Cadastrovagas-title">Requisitos Qualificações:</label>
-    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required> --}}
+        <label for="tipo_emprego">Tipo de Emprego:</label>
+        <input type="text" id="tipo_emprego" name="tipo_emprego" required>
 
-    <label for="Cadastrovagas-title">Tipo de Emprego:</label>
-    <input type="text" id="Cadastrovagas-title" name="job_title" placeholder="Ex.: Desenvolvedor Web" required>
+        <label for="id_idiomas_fk">Idioma:</label>
+        <select name="id_idiomas_fk">
+          <option value="">Selecione um idioma</option>
+          {{#each idioma}}
+          <option value="{{id}}">{{nome}}</option>
+          {{/each}}
+        </select>
 
-    <label for="Idioma ">Idioma:</label>
-            <select id="idioma" name="id_idiomas_fk">
-                <option value="">Selecione um idioma</option>
-                {{#each idiomas}}
-                <option value="{{id}}">{{nome}}</option>
-                {{/each}}
-            </select>
+        <label for="faixa_salarial">Faixa Salarial (opcional):</label>
+        <input type="text" id="faixa_salarial" name="faixa_salarial">
 
-    {{!-- <label for="cadastrovagas-local">Localização:</label>
-    <input type="text" id="cadastrovagas-local" name="job_location" placeholder="Ex.: São Paulo, SP" required> --}}
+        <label for="salario">Salário:</label>
+        <input type="float" step="0.000.000" id="salario" name="salario" required>
+        <button type="submit">Cadastrar Vaga</button>
 
-    <label for="job-status">Status:</label>
-    <select id="job-status" name="job_status">
-      <option value="aberta">Aberta</option>
-      <option value="fechada">Fechada</option>
-    </select>
-
-    <label for="job-description">Descrição:</label>
-    <textarea id="job-description" name="job_description" rows="4" placeholder="Descrição detalhada da vaga" required></textarea>
-
-    <button type="submit">Publicar Vaga</button>
-    <button type="button" onclick="closeJobForm()">Cancelar</button>
-  </form>
-
-  <script>
-    // Função para fechar o formulário
-    function closeJobForm() {
-      alert("Formulário cancelado!");
-      window.history.back(); // Voltar para a página anterior
-    }
-  </script>
+    </form>
+  </div>
 </body>
 
+</html>

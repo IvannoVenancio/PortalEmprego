@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs');
 const { findUserByEmail } = require("../services/UserService"); // Adicione uma função para buscar o usuário pelo email
 const { findAllUserTypes } = require("../services/TipoUsuarioServices");
 const { findCandidatoById } = require("../services/Candidato");
+const { findRecrutadorById } = require("../services/RecrutadorServices");
+const { findAllVagas } = require("../services/VagasServices");
 
 
 exports.users = async (req, res) => {
@@ -32,14 +34,35 @@ exports.Paginainicial = async (req, res) => {
 exports.Perfil = async (req, res) => {
     try {
         const userId = req.session.user.id
-        console.log("userId::::", userId)
         const candidato = await findCandidatoById(userId)
-        console.log("candidato::::", candidato)
         res.render('Perfil', {candidato}); // Rende a Página escolha
     } catch (error) {
         console.log(error);
     }
 };
+
+exports.PerfilRecrutador = async (req, res) => {
+    try {
+        const userIdR = req.session.user.id
+        const Recrutador = await findRecrutadorById(userIdR)
+        console.log("Recrutador::::", Recrutador)
+        res.render('PerfilRecrutador', {Recrutador}); // Rende a Página escolha
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+exports.VagasRecrutador = async (req, res) => {
+    try {
+        const Vaga = await findAllVagas()
+        console.log("Recrutador::::", Vaga) 
+        res.render('VagasRecrutador',{Vaga}); // Rende a Página vagas
+    } catch (error) {
+        console.error("Erro ao listar vagas:", error);
+        console.log(error);
+    }
+};
+
 
 exports.Vaga = async (req, res) => {
     try {
@@ -49,21 +72,7 @@ exports.Vaga = async (req, res) => {
     }
 };
 
-exports.VagasRecrutador = async (req, res) => {
-    try {
-        res.render('VagasRecrutador'); // Rende a Página vagas
-    } catch (error) {
-        console.log(error);
-    }
-};
 
-exports.CadastroVagas = async (req, res) => {
-    try {
-        res.render('CadastroVagas'); // Rende a Página vagas
-    } catch (error) {
-        console.log(error);
-    }
-};
 
 exports.PaginaRecrutadores = async (req, res) => {
     try {
@@ -132,7 +141,6 @@ exports.login = async (req, res) => {
         const user = await findUserByEmail(email);
         console.log("erro email:::",user)
     
-
         if (!user) {
             // Usuário não encontrado
             return res.status(401).send("Usuário ou senha inválidos.");
@@ -145,13 +153,10 @@ exports.login = async (req, res) => {
             // Senha incorreta
             return res.status(401).send("Usuário ou senha inválidos.");
         }
-
        
         // Armazena informações do usuário na sessão
         req.session.user = { id: user.id, email: user.email, user_type: user.user_type };
-       
-
-
+    
         console.log(" Sessão Criada:", req.session);
 
         // Redireciona para a página inicial do tipo de usuário

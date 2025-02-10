@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const {engine} = require('express-handlebars');
-const UserRoutes = require('./routes/UserRoutes');
+const indexRoutes = require('./routes/IndexRoutes');
 const path = require('path');
 const app = express()
 const session = require('express-session');
@@ -15,7 +15,8 @@ app.use(session({
 }));
 
 
-const { upload } = require('./middleware/Multer')
+const { upload } = require('./middleware/Multer');
+
 
 app.engine('handlebars', engine({
   defaultLayout: 'main',
@@ -28,28 +29,13 @@ app.engine('handlebars', engine({
 }));
 app.set('view engine', 'handlebars');
 
+// Servir arquivos estáticos
 app.use(express.static('public')); 
 
-// // Rota para cadastro de candidato
-// app.post('/cadastrocandidato', upload.single('id_certificacoes_fk'), (req, res) => {
-//   // Verifica se o arquivo foi enviado
-//   if (!req.file) {
-//       return res.status(400).send('Nenhum arquivo enviado.');
-//   }
-
-//   console.log("Dados do candidato:", req.body);
-//   console.log("Arquivo enviado:", req.file);
-
-//   // Aqui você pode processar os dados do candidato e salvar no banco de dados
-//   // ...
-
-//   res.redirect('/Paginainicial'); // Redireciona após o sucesso
-// });
-
-
+// Usando o Body Parser para lidar com requisições POST
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(UserRoutes);
+app.use(indexRoutes);
 
 
 

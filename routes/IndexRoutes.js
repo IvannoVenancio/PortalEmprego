@@ -2,7 +2,7 @@ const express = require('express')
 const indexRoutes = express.Router()
 const UserController = require('../controllers/UserController')
 const TipoUsuarioController = require('../controllers/TipoUsuarioController')
-const CadastrovagasController = require('../controllers/CadastrovagasController')
+const vagasController = require('../controllers/vagasController')
 const CandidatoController = require('../controllers/CandidatoController')
 const RecrutadorController = require('../controllers/RecrutadorController')
 const isAuthenticated = require('../middleware/auth');
@@ -37,6 +37,7 @@ indexRoutes.get('/paginaRecrutadores',isAuthenticated, UserController.PaginaRecr
 
 // Rota para a página de Perfil
 indexRoutes.get('/Perfil',  isAuthenticated, UserController.Perfil);
+indexRoutes.get('/PerfilRecrutador',  isAuthenticated, UserController.PerfilRecrutador);
 
 // Rota para a página de Vagas
 indexRoutes.get('/Vaga', UserController.Vaga);
@@ -45,7 +46,7 @@ indexRoutes.get('/Vaga', UserController.Vaga);
 indexRoutes.get('/VagasRecrutador', UserController.VagasRecrutador)
 
 // Rota para a página de VagasRecrutador
-indexRoutes.get('/CadastroVagas', UserController.CadastroVagas)
+// indexRoutes.get('/CadastroVagas', UserController.CadastroVagas)
 
 // Rota para a página de Vagas
 indexRoutes.get('/PaginaRecrutadores', UserController.PaginaRecrutadores)
@@ -55,8 +56,8 @@ indexRoutes.get('/tipo_usuario', TipoUsuarioController.view)
 indexRoutes.post('/tipo_usuario', TipoUsuarioController.create)
 
 // ROTA PARA A PÁGINA TIPO USUARIOS
-indexRoutes.get('/cadastro_vagas', CadastrovagasController.view)
-indexRoutes.post('/cadastro_vagas', CadastrovagasController.create)
+indexRoutes.get('/CadastroVagas',isAuthenticated, vagasController.view)
+indexRoutes.post('/CadastroVagas', vagasController.create)
 
 
 

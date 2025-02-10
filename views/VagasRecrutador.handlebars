@@ -1,13 +1,12 @@
-<link rel="stylesheet" href="/CSS/Style.css"/>
+<link rel="stylesheet" href="/CSS/Style.css" />
 
 <body class="VagasRecrutador">
   <!-- Barra de Navegação -->
   <nav class="navbar-VagasRecrutador">
-    <div class="logo">Digma Works</div>
     <div class="nav-linksVagasRecrutador">
-      <a href="/dashboard">Painel</a>
+      <a href="/PaginaRecrutadores">Pagina Inicial</a>
       <a href="/jobs" class="active">Minhas Vagas</a>
-      <a href="/profile">Perfil</a>
+      <a href="/PerfilRecrutador">Perfil</a>
       <a href="/logout">Sair</a>
     </div>
   </nav>
@@ -20,30 +19,27 @@
     </header>
 
     <!-- Lista de Vagas -->
+
+
+
     <section class="lista-vagasrecrutador">
+      {{#each Vaga}}
       <div class="vagasrecrutador-card">
-        <h3>Desenvolvedor Full-Stack</h3>
-        <p><strong>Localização:</strong> Remoto</p>
+          <h3>{{titulo}}</h3>
+          <p><strong>Descrição:</strong> {{descricao}}</p>
+          <p><strong>Localização:</strong> {{localizacao}}</p>
+          <p><strong>Salário:</strong> KZ {{salario}}</p>
+          <p><strong>Tipo de contrato:</strong> {{tipoContrato}}</p>
+          <hr>
+        </div>
         <p><strong>Status:</strong> Aberta</p>
         <div class="ação-vagasrecrutador">
           <button class="btn-editar-VagRe">Editar</button>
           <button class="btn-delete-VagRe">Excluir</button>
         </div>
       </div>
+      {{/each}}
 
-      <div class="lista-vagasrecrutador">
-        <h3>Analista de Dados</h3>
-        <p><strong>Localização:</strong> São Paulo</p>
-        <p><strong>Status:</strong> Fechada</p>
-        <div class="ação-vagasrecrutador">
-          <button class="btn-editar-VagRe">Editar</button>
-          <button class="btn-delete-VagRe">Excluir</button>
-        </div>
-      </div>
-    </section>
-
-    
-
-  
 </body>
+
 </html>
