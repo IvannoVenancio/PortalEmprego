@@ -6,9 +6,16 @@ const vagasController = require('../controllers/vagasController')
 const CandidatoController = require('../controllers/CandidatoController')
 const RecrutadorController = require('../controllers/RecrutadorController')
 const isAuthenticated = require('../middleware/auth');
+const { enviarEmailRecuperacao, recuperarsenha } = require('../controllers/recuperarsenha');
+
+
 
 // Rota para a página de home
 indexRoutes.get('/home',UserController.users)
+
+//Rota para recuperar senha
+indexRoutes.post('/recuperarsenha', enviarEmailRecuperacao);
+indexRoutes.get('/recuperarsenha', recuperarsenha);
 
 // Rota para a página de login
 indexRoutes.post('/login', UserController.login)
@@ -45,9 +52,6 @@ indexRoutes.get('/Vaga', UserController.Vaga);
 // Rota para a página de VagasRecrutador
 indexRoutes.get('/VagasRecrutador', UserController.VagasRecrutador)
 
-// Rota para a página de VagasRecrutador
-// indexRoutes.get('/CadastroVagas', UserController.CadastroVagas)
-
 // Rota para a página de Vagas
 indexRoutes.get('/PaginaRecrutadores', UserController.PaginaRecrutadores)
 
@@ -58,6 +62,49 @@ indexRoutes.post('/tipo_usuario', TipoUsuarioController.create)
 // ROTA PARA A PÁGINA TIPO USUARIOS
 indexRoutes.get('/CadastroVagas',isAuthenticated, vagasController.view)
 indexRoutes.post('/CadastroVagas', vagasController.create)
+
+// Rota para redefinir senha
+indexRoutes.get('/resetarsenha/:token', (req, res) => {
+    res.render('esqueceusenha', { token: req.params.token });
+});
+
+
+//ROTAS COM CONDIÇÃO//
+
+
+
+indexRoutes.post('/resetarsenha', async (req, res) => {
+    const { token, senha } = req.body;
+    const bcrypt = require('bcryptjs');
+    const prisma = require('@prisma/client'); // Certifique-se de importar seu client do Prisma
+
+    try {
+        const user = await prisma.user.findFirst({
+            where: { resetToken: token, resetTokenExpiracao: { gt: new Date() } },
+        });
+
+        if (!user) {
+            return res.status(400).send('Token inválido ou expirado!');
+        }
+
+        const senhaCriptografada = await bcrypt.hash(senha, 10);
+
+        await prisma.user.update({
+            where: { id: user.id },
+            data: { senha: senhaCriptografada, resetToken: null, resetTokenExpiracao: null },
+        });
+
+        res.send('Senha alterada com sucesso!');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Erro ao redefinir senha.');
+    }
+});
+
+
+
+
+
 
 
 

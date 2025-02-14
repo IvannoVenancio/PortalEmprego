@@ -98,6 +98,8 @@ model Recrutador{
   cargo          String
   id_user_fk     Int
   empresa        String
+  sobre          String?
+  fotoPerfil     String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   User        User     @relation("id_user_recrutador", fields: [id_user_fk], references: [id])
@@ -155,6 +157,7 @@ model Candidato{
   id_certificacoes_fk             Int?
   id_redes_socias_fk              Int?
   id_idiomas_fk                   Int?
+  fotoPerfil                   String?
 
 
   created_at DateTime @default(now())

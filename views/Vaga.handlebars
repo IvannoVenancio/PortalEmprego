@@ -42,28 +42,19 @@
     </aside>
 
     <!-- Lista de Vagas -->
-    <main class="Lista-Vagas">
+
+    <main class="vagas-destaque">
       <h2>Vagas Disponíveis</h2>
+       {{#each Vaga}}
       <div class="Vagascard">
-        <h3>Desenvolvedor Full-Stack</h3>
-        <p><strong>Empresa:</strong> TechCorp</p>
-        <p><strong>Localização:</strong> Remoto</p>
-        <p>Trazer a tecnoligia até nós. <a href="/vaga/1">Ver mais</a></p>
+         <h3>{{titulo}}</h3>
+        <p><strong>Descrição:</strong> {{descricao}}</p>
+        <p><strong>Localização:</strong> {{localizacao}}</p>
+        <p><strong>Salário:</strong> KZ {{salario}}</p>
+        <p><strong>Tipo de Enprego:</strong> {{tipo_emprego}}</p> 
+        <p> <a href="/vaga/1">Ver Detalhes</a></p>
       </div>
-
-      <div class="Vagascard">
-        <h3>Designer UX/UI</h3>
-        <p><strong>Empresa:</strong> Creative Solutions</p>
-        <p><strong>Localização:</strong> São Paulo</p>
-        <p>Profissional com experiência e amor pela arte. <a href="/vaga/2">Ver mais</a></p>
-      </div>
-
-      <div class="Vagascard">
-        <h3>Analista de Dados</h3>
-        <p><strong>Empresa:</strong> Data Insights</p>
-        <p><strong>Localização:</strong> Belo Horizonte</p>
-        <p>Analista de dados . <a href="/vaga/3">Ver mais</a></p>
-      </div>
+        {{/each}}
     </main>
   </div>
 </body>

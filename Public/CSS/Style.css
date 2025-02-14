@@ -8,8 +8,6 @@ body {
 }
 
 /* estilo pagina home*/
-    
-
 /* Estilos para o corpo */
 body.pagina-home{
   display: flex;
@@ -24,45 +22,38 @@ header.pagina-home {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #2c3e50;
+  background-color: #2f5e8d;
   color: white;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
 }
-
-
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: #4CAF50;
+  color: #ffff;
   text-decoration: none;
 }
-
-
 .buttons a {
   padding: 8px 20px;
   border-radius: 4px;
   text-decoration: none;
   color: white;
 }
-
 .buttons {
   margin-right: 40px;
 }
-
 .perfil-btn,.Re-vaga-btn,.sms-btn,.not-btn{
   background-color: #303031;
-
 }
 
 .login-btn {
-  background-color: #4CAF50;
+  background-color: #5d5045;
 }
 
 .register-btn {
-  background-color: #e67e22;
+  background-color: #5d5045;
 }
 
 /* Container de Texto e Imagem */
@@ -79,7 +70,7 @@ header.pagina-home {
    .texto-home {
   background-color: #ffffff;
   padding: 10px;
-  border-left: 5px solid #29ca1a;
+  border-left: 5px solid #3e4b91;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   font-size: 18px;
   color: #333;
@@ -94,85 +85,73 @@ header.pagina-home {
     to { opacity: 1; transform: translateY(0); }
     }
 
-/* Contêiner para a imagem */
-.image-container {
-  display: flex; /* Usa flexbox */
-  flex-direction: column; /* Empilha as imagens verticalmente */
-  align-items: center; /* Centraliza as imagens horizontalmente */
-  padding: 20px; /* Espaçamento interno */
-}
-
 /* Estilo da Imagem */
 .image-container img {
-  max-width: 300px; /* Define a largura máxima da imagem */
-  max-height: 300px; /* Define a altura máxima */
-  object-fit: cover; /* Evita distorções */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona sombra */
-  margin-bottom: 20px; /* Adiciona espaçamento entre as imagens */
-  display: block;
+  float: right;
+    max-width: 60%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: -576px;
+    margin-left: -18px; 
 }
 
-/* Conteiner Vagas destaques */
-
-.vagas-container {
-  padding: 20px;
-  background-color: #f9f9f9;
-}
-
-.vagas-container h2 {
+/* /////Conteiner Vagas destaques//////// */
+/* Estilização da seção de Vagas em Destaque */
+.vagas-destaque {
   text-align: center;
-  margin-bottom: 20px;
-  color: #333;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f8f9fa;
 }
-
+.vagas-destaque h2{
+  color: #0D47A1;
+}
 .vagas-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
-
-.vagas-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  width: 300px;
+.vaga-card {
+  background-color: white;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  width: 300px;
+  padding: 20px;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
 }
-
-.vagas-card h3 {
-  margin-top: 0;
+.vaga-card:hover {
+  transform: translateY(-5px);
+}
+.vaga-card h3 {
+  font-size: 18px;
   color: #007bff;
+  margin-bottom: 10px;
 }
-
-.vagas-card p {
-  margin: 10px 0;
+.vaga-card p {
   font-size: 14px;
-  color: #666;
+  color: #555;
+  margin: 5px 0;
 }
-
-.vagas-card .details-btn {
+.btn-ver-vaga {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: #fff;
   text-decoration: none;
-  border-radius: 4px;
-  text-align: center;
+  color: white;
+  background: #007bff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.btn-ver-vaga:hover {
+  background: #0056b3;
 }
 
-.vagas-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
 
-
-
- /* ESTILIZAÇÃO TELA DE LOGIN */
+ /* //////ESTILIZAÇÃO TELA DE LOGIN/////// */
 
 body.tela-login {
   display: flex;
@@ -181,124 +160,218 @@ body.tela-login {
   height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+  background-color: #4b76b7;
 }
-
 /* Caixa de login */
 .container-telalogin {
   max-width: 400px;
       margin: 60px auto;
-      background-color: white;
+      background-color: #f0f7fb;
       padding: 30px;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
 }
-
 /* Título centralizado */
 .container-telalogin h2 {
   margin-bottom: 20px;
-  color: #333;
+  color: #2e4c63;
   font-weight: bold;
   text-align: center;
 }
-
 /* Campos de input */
 .container-telalogin input[type="email"],
 .container-telalogin input[type="password"] {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
-  border: 1px solid #ccc;
+  border: 1px solid #d2d8dd;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: #f0f7fb;
 }
-
 .container-telalogin label{
   font-size: 14px;
   margin-bottom: 5px;
   text-align: left;
 }
-
 /* Botão de login */
 .container-telalogin button {
   width: 100%;
       padding: 10px;
-      background-color: #4CAF50;
+      background-color: #03A9F4;
       color: white;
       border: none;
       border-radius: 4px;
       cursor: pointer;
 }
-
 .container-telalogin button:hover {
-  background-color: #45a049;
+  background-color: #458ba0;
 }
-
 /* Link para recuperar senha */
 .container-telalogin a {
   display: block;
   margin-top: 15px;
-  color: #4CAF50;
+  color: #2e4c63;
   text-decoration: none;
   font-size: 14px;
   text-align: center;
 }
-
 .container-telalogin a:hover {
+  text-decoration: underline;
+}
+.container-telalogin p{
+  color: #01579B;
+}
+
+
+/* ///////////Estilização ESQUECEUSENHA /////////////////// */
+body.senhafoi{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #3b74a6;
+}
+
+/* Container principal */
+.form-containeresqueceusenha {
+  background: #e6eff4; /* Cor de fundo do formulário */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Título */
+.form-containeresqueceusenha h2 {
+  margin-bottom: 15px;
+  color: #ff6f61;
+  font-weight: bold;
+}
+
+/* Formulário */
+.senha-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Campos de entrada */
+.senha-form label {
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: left;
+  color: #1c3a5a;
+}
+
+.senha-form input {
+  width: 92%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: border 0.3s;
+}
+
+.senha-form input:focus {
+  border-color: #ff6f61;
+  outline: none;
+}
+
+/* Botão */
+.senha-form button {
+  background: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.senha-form button:hover {
+  background: #d9534f;
+}
+
+/* Link para voltar */
+.back-link {
+  display: block;
+  margin-top: 15px;
+  color: #ff6f61;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.back-link:hover {
   text-decoration: underline;
 }
 
 
-/* PAGINA DE CADASTRO*/
+
+
+
+
+
+/* ////////PAGINA DE CADASTRO//////// */
 body.container-cadastro {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0px;
-  background-color: #f7f7f7;
+  background-color: #4b76b7;
   color: #333;
 }
-
  Título da seção 
 .titulo-cadastro {
-  font-size: 28px; /* Ajuste o tamanho da fonte conforme necessário */
-  font-weight: bold; /* Você pode ajustar isso se preferir */
-  color: #2c3e50; /* Cor do texto */
-  text-align: center; /* Centraliza o texto */
-  margin-top: 80px; /* Adicione um espaçamento superior para evitar sobreposição */
-  padding: 20px; /* Adicione um padding se necessário */
+  font-size: 28px; 
+  font-weight: bold; 
+  color: #2c3e50; 
+  text-align: center; 
+  margin-top: 80px; 
+  padding: 20px; 
 }
-
 /* Container do formulário */
 .container-registro {
   max-width: 400px;
   margin: 50px auto;
   padding: 20px;
   background-color: #fff;
-  border-radius: 10px;
+  border-radius: 19px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-
 }
 .container-registro h2 {
   margin-bottom: 20px;
   font-size: 24px;
-  color: #4CAF50;
-
+  color: #2196f3;
 }
-
 /* Estilo do formulário */
 .cadastro-form {
   display: flex;
   flex-direction: column;
 }
-
 .cadastro-form label {
   font-size: 14px;
   margin-bottom: 5px;
   text-align: left;
 }
-
 .cadastro-form input {
   padding: 10px  0px;
   margin-bottom: -20px;
@@ -307,10 +380,9 @@ body.container-cadastro {
   font-size: 16px;
   width: 100%;
 }
-
 .cadastro-form button {
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #03A9F4;
   color: white;
   font-size: 16px;
   border: none;
@@ -318,44 +390,38 @@ body.container-cadastro {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .cadastro-form button:hover {
-  background-color: #45a049;
+  background-color: #458ea0;
 }
-
 /* Link para login */
 .container-registro p {
   margin-top: 10px;
   font-size: 14px;
 }
-
 .container-registro p a {
-  color: #4CAF50;
+  color: #2e4c63;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease;
 }
-
 .container-registro p a:hover {
-  color: #45a049;
+  color: #4a87b9;
 }
 
 
-
-/*Cadastro-Candidato*/
+/* //////////Cadastro-Candidato//////// */
 
 body.Pagina-cadastro {
   font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(352deg, #ffffff, #2575fc);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 .container02-cadastro {
   background: #fff;
   color: #333;
@@ -366,23 +432,19 @@ body.Pagina-cadastro {
   max-width: 500px;
   text-align: center;
 }
-
 h1 {
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
   color: #2575fc;
 }
-
 .candidato-form {
   display: flex;
   flex-direction: column;
 }
-
 label {
   margin-top: 1rem;
   font-weight: bold;
 }
-
 input, textarea {
   margin-top: 0.5rem;
     padding: 0.8rem;
@@ -391,35 +453,27 @@ input, textarea {
     font-size: 1rem;
     width: 100%;
 }
-
 textarea {
   resize: none;
 }
 
-.btn-enviocadastro, .btn-estudante {
-  background-color: #7f9ba7;
-    color: #fff;
-    font-size: 1.2rem;
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1.5rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+.btn-submit{
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-top: 12px;
+  background-color: #2196F3;
 }
 
-.btn-enviocadastro:hover, .btn-estudante:hover {
-  background-color: #80b177;
-  transform: scale(1.05);
+.btn-submit:hover {
+  background-color: #1d3e69;
+  transform: scale(1.09);
 }
 
-.btn-enviocadastro:active, .btn-estudante:active {
+.btn-submit:active{
   transform: scale(0.95);
-}
-
-.Secção-Estudante {
-  margin-top: 1.5rem;
-  text-align: center;
 }
 
 .candidato-form input {
@@ -430,235 +484,25 @@ textarea {
   font-size: 16px;
   width: 100%;
 }
-
 .candidato-form label{
   font-size: 14px;
   margin-bottom: 0px;
   text-align: left;
 }
 
-select {
-  color: black; /* Define a cor do texto como preto */
-  font-size: 16px; /* Tamanho da fonte ajustável */
-  font-family: Arial, sans-serif; /* Família de fonte */
-  background-color: white; /* Fundo branco para contraste */
-  border: 1px solid #ccc; /* Borda discreta */
-  border-radius: 4px; /* Borda arredondada */
-  padding: 5px; /* Espaçamento interno */
-}
+/* /////////////////CadastroRecrutador/////////////// */
 
-/* Estilo específico das opções */
-select option {
-  color: black; /* Cor do texto */
-  font-size: 14px;
-}
-
-/* Opcional: Estilo ao passar o mouse */
-select option:hover {
-  background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
-}
-
-
-
-/*ESTILIZAÇÃO PAGINA PRINCIPAL*/
-
-
-body.Paginainicial {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f2f5;
-  color: #333;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
-}
-a:hover {
-  color: #28486a;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.btn-publicarcand {
-  background-color: #1c3a5a;
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-/* Navbar */
-header.nav-paginainicial {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #1c3a5a;;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.logopag-candidato {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.logopag-candidato span {
-  color: #2b904b;
-}
-
-.pesquisapag-candidato {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.pesquisapag-candidato input {
-  padding: 0.5rem;
-  border: 1px solid #f8f9fbdc;
-  border-radius: 5px;
-  width: 200px;
-}
-
-/* Layout Principal */
-.container-paginaprincipal {
-  display: flex;
-  margin-top: 80px;
-  padding: 1rem 2rem;
-  gap: 1.5rem;
-}
-
-/* Sidebar Esquerda */
-.Barralateral-esquerda{
-  flex: 1;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.Barralateral-esquerda ul {
-  list-style: none;
-}
-
-.Barralateral-esquerda ul li {
-  margin-bottom: 1rem;
-}
-
-.Barralateral-esquerda ul li a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.1rem;
-}
-/* Feed */
-.feedpag-candidato {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.caixapost-candidato{
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.caixapost-candidato textarea {
-  width: 100%;
-  resize: none;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.Opçõespost-candidato button {
-  margin-right: 0.5rem;
-}
-
-.postagens-candidato {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.postagenscand-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.postagenscand-header img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-
-.conteinerpost-candidato {
-  margin: 1rem 0;
-}
-
-.postreações-candidato button {
-  margin-right: 1rem;
-  background: none;
-  font-size: 1rem;
-  color: #4cb36e;
-}
-
-/* Sidebar Direita */
-.barralateral-dircand {
-  flex: 1;
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.sugestões-candidato {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.sugestões-candidato img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-}
-
-
-
-
-/*Recrutador*/
-
-body.pagina-recrutador {
+body.pagina-recrutador{
   font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 74px;
-    background: linear-gradient(135deg, #60a346, #4b8664);
+    background: linear-gradient(135deg, #1E88E5, #C5CAE9);
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-
 .container1-recrutador {
   background: #fff;
   color: #333;
@@ -669,24 +513,20 @@ body.pagina-recrutador {
   max-width: 500px;
   text-align: center;
 }
-
 .container1-recrutador h1 {
   margin-bottom: 1.5rem;
    font-size: 1.8rem;
   color: #2575fc;
 }
-
 .form-recrutador {
   display: flex;
   flex-direction: column;
 }
-
 .form-recrutador label {
   font-size: 14px;
   margin-bottom: 0px;
   text-align: left;
 }
-
 .form-recrutador input, textarea {
   padding: 10px  0px;
   margin-bottom: 0px;
@@ -695,12 +535,9 @@ body.pagina-recrutador {
   font-size: 16px;
   width: 100%;
 }
-
 .form-recrutador textarea {
   resize: none;
-  
 }
-
 .btn-enviorecrutador {
   background-color: #2575fc;
   color: #fff;
@@ -712,221 +549,34 @@ body.pagina-recrutador {
   margin-top: 1.5rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
 .btn-enviorecrutador:hover {
-  background-color: #1e63d0;
+  background-color: #608dd4;
   transform: scale(1.05);
 }
-
 .btn-enviorecrutador:active {
   transform: scale(0.95);
 }
 
 
-/*Estilização PaginaRecrutador*/
-body.PaginaRecrutador{
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #1c3a5a;
+/*Estilização dos select's*/
+select {
+  color: black; 
+  font-size: 16px; 
+  font-family: Arial, sans-serif; 
+  background-color: white; 
+  border: 1px solid #ccc; 
+  border-radius: 4px;
+  padding: 7px;
+  margin-top: 11px;
 }
-
-a {
-  text-decoration: none;
-  color: #333;
-  transition: color 0.2s ease;
+/* Estilo específico das opções */
+select option {
+  color: black; 
+  font-size: 14px;
 }
-a:hover {
-  color: #007bff;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-size: 1rem;
-}
-
-.btn-primary {
-  transition: background-color 0.3s ease;
-  background-color: #28a745; /* Verde */
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background-color: #1c3a5a;
-}
-/* Navbar */
-.navbar-PagRecrutador {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #498d4b;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.logoPagRecrutador {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.logoPagRecrutador span {
-  color: #1c3a5a;
-}
-
-.search-barPagRecrutador {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1c3a5a;
-    padding: 5px;
-    border-radius: 25px;
-    width: 100%;
-    max-width: 400px; /* Limita o tamanho máximo */
-    margin: 0
-}
-
-.search-barPagRecrutador input {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 200px;
-}
-.menu-links a {
-  margin-left: 1rem;
-}
-
-/* Layout Principal */
-.main-containerPagRecrutador {
-  display: flex;
-  margin-top: 80px;
-  padding: 1rem 2rem;
-  gap: 1.5rem;
-}
-
-/* Sidebar Esquerda */
-.left-sidebarPagRecrutador {
-  flex: 1;
-  background-color: #003366;;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.left-sidebarPagRecrutador ul {
-  list-style: none;
-}
-
-.left-sidebarPagRecrutador ul li {
-  margin-bottom: 1rem;
-}
-
-.left-sidebarPagRecrutador ul li a {
-  display: flex;
-  align-items: center;
-  font-size: 1.1rem;
-  color: white;
-}
-
-/* Feed */
-.feed-PagRecrutador {
-  flex: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.post-boxPagRecrutador {
-  background-color: white; /* Fundo branco */
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
-}
-
-.post-boxPagRecrutador textarea {
-   width: 100%;
-  resize: none;
-  margin-bottom: 1rem;
-
-  flex: 1;
-  padding: 1px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-}
-
-.post-opçõesPagRecrutador button {
-  margin-right: 0.5rem;
-  background-color: #28a745; /* Verde */
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.postes-PagRecrutador {
-  background-color: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.postes-headerPagRecrutador {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.postes-headerPagRecrutador img {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-}
-
-.postes2-PagRecrutador {
-  margin: 1rem 0;
-}
-
-.postação-PagRecrutador button {
-  background-color: #ff8c00; /* Laranja */
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Sidebar Direita */
-.right-sidebarPagRecrutador {
-  flex: 1;
-  background-color: #003366;;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.sugestõesPagRecrutador {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.sugestõesPagRecrutador img {
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+/* Opcional: Estilo ao passar o mouse */
+select option:hover {
+  background-color: #f0f0f0; /* Cor de fundo ao passar o mouse */
 }
 
 
@@ -978,7 +628,8 @@ body.Vagas {
   display: flex;
   max-width: 1200px;
   margin: 20px auto;
-  gap: 20px;
+  gap: 173px;
+
 }
 
 /* Sidebar */
@@ -999,11 +650,18 @@ body.Vagas {
   display: block;
   margin-top: 10px;
 }
-
-.sidebar-PagVagas input,
-.sidebar-PagVagas select,
-.sidebar-PagVagas button {
+.sidebar-PagVagas select{
   width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+
+
+}
+.sidebar-PagVagas input {
+  width: 93%;
   margin-top: 5px;
   padding: 8px;
   border: 1px solid #ccc;
@@ -1015,6 +673,10 @@ body.Vagas {
   color: #fff;
   border: none;
   cursor: pointer;
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .sidebar-PagVagas button:hover {
@@ -1065,7 +727,7 @@ body.Vagas {
 /* Estilização VAGASRECRUTADOR */
 body.VagasRecrutador {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #4b76b7;
   color: #333;
 }
 
@@ -1076,7 +738,7 @@ body.VagasRecrutador {
   background-color: #0077b5;
   color: #fff;
   padding: 17px 20px;
-  margin-top: 72px;
+  margin-top: 59px;
 }
 
 .navbar-VagasRecrutador .logo {
@@ -1108,10 +770,19 @@ body.VagasRecrutador {
   margin-bottom: 20px;
 }
 
+.header-VagasRecrutador h1{
+   margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #ffffff;
+
+
+
+}
+
 .btn-createVagRe {
   padding: 10px 20px;
-  background-color: #0077b5;
-  color: #fff;
+  background-color: #ffffff;;
+  color: #00BCD4;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1146,12 +817,12 @@ body.VagasRecrutador {
 }
 
 .btn-editar-VagRe{
-  background-color: #f0ad4e;
+  background-color: #FFEB3B;
   color: #fff;
 }
 
 .btn-delete-VagRe {
-  background-color: #d9534f;
+  background-color: #4fd9cb;
   color: #fff;
 }
 
@@ -1537,10 +1208,10 @@ body.PerfilRecrutador {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #aeb3b5;
+  background-color: #ffffff;
   color: #fff;
   padding: 17px 20px;
-  margin-top: 72px;
+  margin-top: 58px;
 }
 
 
@@ -1588,22 +1259,6 @@ body.PerfilRecrutador {
 
 
 
-/* Rodapé */
-footer {
-  width: 100%;
-  background-color: #2c3e50;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-}
-
-footer p {
-  margin: 0;
-  font-size: 14px;
-}
-
 
 
 
@@ -1628,6 +1283,7 @@ body .PerfilRecrutador1 {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  margin-top: 100px;
 }
 
 .profile-header {
@@ -1772,24 +1428,22 @@ body .PerfilRecrutador1 {
 
 
 
-/* Reset básico */
-* {
-  
-  padding: 0;
-  box-sizing: border-box;
-}
+/*PaginaVagasrecrutador*/
 
-body .vagasRe {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
+body.vagasRe{
+  background-color: #4b76b7;
   padding: 20px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+ 
+
 }
 
 .form-container {
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 455px;
+  margin: 100px auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -1817,7 +1471,7 @@ body .vagasRe {
 .form-group input,
 .form-group textarea,
 .form-group select {
-  width: 100%;
+  width: 96%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -1842,4 +1496,598 @@ body .vagasRe {
 
 .form-group button:hover {
   background-color: #2980b9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilização do formulário de edição */
+.vagasrecrutador-card .form-edicao {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.vagasrecrutador-card .form-edicao input,
+.vagasrecrutador-card .form-edicao textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.vagasrecrutador-card .form-edicao textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.vagasrecrutador-card .form-edicao .btn-salvar {
+  background: #69b7db;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.vagasrecrutador-card .form-edicao .btn-salvar:hover {
+  background: #69b5e0;
+}
+
+.vagasrecrutador-card .form-edicao .btn-cancelar {
+  background: #d9dc35;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.vagasrecrutador-card .form-edicao .btn-cancelar:hover {
+  background: #236ac8;
+}
+
+/* Estilização da mensagem de confirmação */
+.confirmacao-exclusao {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+.confirmacao-exclusao button {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirmacao-exclusao .btn-confirmar {
+  background: #e7da23;
+  color: white;
+}
+
+.confirmacao-exclusao .btn-cancelar {
+  background: #5881a5;
+  color: white;
+}
+
+.confirmacao-exclusao .btn-confirmar:hover {
+  background: #4e50db;
+}
+
+.confirmacao-exclusao .btn-cancelar:hover {
+  background: #264a66;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+
+
+
+
+/*ESTILIZAÇÃO PAGINA PRINCIPAL*/
+
+body.Paginainicial {
+background-color: #f4f4f4;
+display: flex;
+justify-content: center; 
+font-family: Arial, sans-serif; 
+margin-top: 90px;
+}
+
+.container-paginaprincipal {
+display: flex;
+width: 100%;
+max-width: 1200px;
+margin-top: 20px;
+}
+
+/* Barra lateral esquerda */
+.Barralateral-esquerda {
+width: 250px;
+background: #ffffff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Barralateral-esquerda .perfil-usuario {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.Barralateral-esquerda ul {
+list-style: none;
+}
+
+.Barralateral-esquerda ul li {
+margin: 10px 0;
+}
+
+.Barralateral-esquerda ul li a {
+text-decoration: none;
+color: #09599b;
+font-weight: bold;
+display: flex;
+align-items: center;
+gap: 10px;
+padding: 10px;
+border-radius: 5px;
+transition: 0.3s;
+}
+
+.Barralateral-esquerda ul li a:hover {
+background: #ddd;
+}
+
+/* Feed principal */
+.feedpag-candidato {
+flex: 1;
+margin: 0 20px;
+}
+
+.caixapost-candidato {
+background: #fff;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.caixapost-candidato textarea {
+width: 95%;
+height: 30px;
+border: none;
+padding: 10px;
+resize: none;
+outline: none;
+border-radius: 5px;
+background: #f9f9f9;
+}
+
+.Opçõespost-candidato {
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+}
+
+.Opçõespost-candidato button {
+background: #007bff;
+color: white;
+border: none;
+padding: 8px 12px;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.Opçõespost-candidato button:hover {
+background: #0056b3;
+}
+
+.postagens-candidato {
+background: #fff;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+}
+
+.postagenscand-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 10px;
+}
+
+.conteinerpost-candidato p {
+font-size: 14px;
+color: #333;
+}
+
+.postreações-candidato {
+display: flex;
+gap: 10px;
+margin-top: 10px;
+}
+
+.postreações-candidato button {
+background: none;
+border: none;
+cursor: pointer;
+color: #007bff;
+font-weight: bold;
+}
+
+/* Barra lateral direita */
+.barralateral-dircand {
+width: 250px;
+background: #ffffff;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sugestões-candidato {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 15px;
+}
+
+.sugestões-candidato button {
+background: #28a745;
+color: white;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+.sugestões-candidato button:hover {
+background: #218838;
+}
+
+
+
+/* //////////////Estilização PaginaRecrutador////////////*/
+body.PaginaRecrutador{
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #1c3a5a;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #007bff;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  transition: background-color 0.3s ease;
+  background-color: #28a745; /* Verde */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #1c3a5a;
+}
+/* Navbar */
+.navbar-PagRecrutador {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #2d30b4;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logoPagRecrutador {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.logoPagRecrutador span {
+  color: #1c3a5a;
+}
+
+.search-barPagRecrutador {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c3a5a;
+    padding: 5px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px; /* Limita o tamanho máximo */
+    margin: 0
+}
+
+.search-barPagRecrutador input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+.menu-links a {
+  margin-left: 1rem;
+}
+
+/* Layout Principal */
+.main-containerPagRecrutador {
+  display: flex;
+  margin-top: 80px;
+  padding: 1rem 2rem;
+  gap: 1.5rem;
+}
+
+/* Sidebar Esquerda */
+.left-sidebarPagRecrutador {
+  flex: 1;
+  background-color: #ffffff;;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-sidebarPagRecrutador ul {
+  list-style: none;
+}
+
+.left-sidebarPagRecrutador ul li {
+  margin-bottom: 1rem;
+}
+
+.left-sidebarPagRecrutador ul li a {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: rgb(59, 96, 128);
+}
+
+/* Feed */
+.feed-PagRecrutador {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.post-boxPagRecrutador {
+  background-color: white; /* Fundo branco */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+}
+
+.post-boxPagRecrutador textarea {
+   width: 100%;
+  resize: none;
+  margin-bottom: 1rem;
+
+  flex: 1;
+  padding: 1px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+}
+
+.post-opçõesPagRecrutador button {
+  margin-right: 0.5rem;
+  background-color: #0c115a; /* Verde */
+    color: rgb(235, 239, 245);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.postes-PagRecrutador {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.postes-headerPagRecrutador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.postes-headerPagRecrutador img {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.postes2-PagRecrutador {
+  margin: 1rem 0;
+}
+
+.postação-PagRecrutador button {
+  background-color: #ff8c00; /* Laranja */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Sidebar Direita */
+.right-sidebarPagRecrutador {
+  flex: 1;
+  background-color: #ffffff;;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sugestõesPagRecrutador {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sugestõesPagRecrutador img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Rodapé */
+footer {
+  width: 100%;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
 }

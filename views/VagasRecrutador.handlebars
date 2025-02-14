@@ -5,7 +5,7 @@
   <nav class="navbar-VagasRecrutador">
     <div class="nav-linksVagasRecrutador">
       <a href="/PaginaRecrutadores">Pagina Inicial</a>
-      <a href="/jobs" class="active">Minhas Vagas</a>
+      <a href="/VagasRecrutador" class="active">Minhas Vagas</a>
       <a href="/PerfilRecrutador">Perfil</a>
       <a href="/logout">Sair</a>
     </div>
@@ -19,27 +19,131 @@
     </header>
 
     <!-- Lista de Vagas -->
-
-
-
     <section class="lista-vagasrecrutador">
+      <div class="vagasrecrutador-card">
       {{#each Vaga}}
+      <div class="lista-vagasrecrutador">
       <div class="vagasrecrutador-card">
           <h3>{{titulo}}</h3>
           <p><strong>Descrição:</strong> {{descricao}}</p>
           <p><strong>Localização:</strong> {{localizacao}}</p>
           <p><strong>Salário:</strong> KZ {{salario}}</p>
-          <p><strong>Tipo de contrato:</strong> {{tipoContrato}}</p>
+           <p><strong>Tipo de Enprego:</strong> {{tipo_emprego}}</p> 
+          <p><strong>Data de criação:</strong> {{data_criacao}}</p>
+           <p><strong>Status:</strong> Aberta</p>
           <hr>
-        </div>
-        <p><strong>Status:</strong> Aberta</p>
-        <div class="ação-vagasrecrutador">
           <button class="btn-editar-VagRe">Editar</button>
           <button class="btn-delete-VagRe">Excluir</button>
         </div>
       </div>
+       </div>
       {{/each}}
 
-</body>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const botoesEditar = document.querySelectorAll(".btn-editar-VagRe");
+    const botoesExcluir = document.querySelectorAll(".btn-delete-VagRe");
 
+    function criarFormularioEdicao(vagaCard) {
+        const titulo = vagaCard.querySelector("h3").textContent;
+        const descricao = vagaCard.querySelector("p:nth-of-type(1)").textContent.replace("Descrição: ", "");
+        const localizacao = vagaCard.querySelector("p:nth-of-type(2)").textContent.replace("Localização: ", "");
+        const salario = vagaCard.querySelector("p:nth-of-type(3)").textContent.replace("Salário: KZ ", "");
+        const tipoContrato = vagaCard.querySelector("p:nth-of-type(4)").textContent.replace("Tipo de contrato: ", "");
+
+        const formulario = document.createElement("div");
+        formulario.classList.add("form-edicao");
+        formulario.innerHTML = `
+            <input type="text" value="${titulo}" placeholder="Título">
+            <textarea>${descricao}</textarea>
+            <input type="text" value="${localizacao}" placeholder="Localização">
+            <input type="number" value="${salario}" placeholder="Salário">
+            <input type="text" value="${tipoContrato}" placeholder="Tipo de Contrato">
+            <button class="btn-salvar">Salvar</button>
+            <button class="btn-cancelar">Cancelar</button>
+        `;
+
+        vagaCard.innerHTML = "";
+        vagaCard.appendChild(formulario);
+
+        formulario.querySelector(".btn-salvar").addEventListener("click", function () {
+            vagaCard.innerHTML = `
+                <h3>${formulario.querySelector("input:nth-of-type(1)").value}</h3>
+                <p><strong>Descrição:</strong> ${formulario.querySelector("textarea").value}</p>
+                <p><strong>Localização:</strong> ${formulario.querySelector("input:nth-of-type(2)").value}</p>
+                <p><strong>Salário:</strong> KZ ${formulario.querySelector("input:nth-of-type(3)").value}</p>
+                <p><strong>Tipo de contrato:</strong> ${formulario.querySelector("input:nth-of-type(4)").value}</p>
+                <p><strong>Status:</strong> Aberta</p>
+                <hr>
+                <button class="btn-editar-VagRe">Editar</button>
+                <button class="btn-delete-VagRe">Excluir</button>
+            `;
+
+            adicionarEventos();
+        });
+
+        formulario.querySelector(".btn-cancelar").addEventListener("click", function () {
+            vagaCard.innerHTML = `
+                <h3>${titulo}</h3>
+                <p><strong>Descrição:</strong> ${descricao}</p>
+                <p><strong>Localização:</strong> ${localizacao}</p>
+                <p><strong>Salário:</strong> KZ ${salario}</p>
+                <p><strong>Tipo de contrato:</strong> ${tipoContrato}</p>
+                <p><strong>Status:</strong> Aberta</p>
+                <hr>
+                <button class="btn-editar-VagRe">Editar</button>
+                <button class="btn-delete-VagRe">Excluir</button>
+            `;
+
+            adicionarEventos();
+        });
+    }
+
+    function exibirConfirmacao(vagaCard) {
+        const overlay = document.createElement("div");
+        overlay.classList.add("overlay");
+
+        const modal = document.createElement("div");
+        modal.classList.add("confirmacao-exclusao");
+        modal.innerHTML = `
+            <p>Tem certeza que deseja excluir esta vaga?</p>
+            <button class="btn-confirmar">Sim, Excluir</button>
+            <button class="btn-cancelar">Cancelar</button>
+        `;
+
+        document.body.appendChild(overlay);
+        document.body.appendChild(modal);
+
+        modal.querySelector(".btn-confirmar").addEventListener("click", function () {
+            vagaCard.remove();
+            document.body.removeChild(overlay);
+            document.body.removeChild(modal);
+        });
+
+        modal.querySelector(".btn-cancelar").addEventListener("click", function () {
+            document.body.removeChild(overlay);
+            document.body.removeChild(modal);
+        });
+    }
+
+    function adicionarEventos() {
+        document.querySelectorAll(".btn-editar-VagRe").forEach((botao) => {
+            botao.addEventListener("click", function () {
+                let vagaCard = botao.closest(".vagasrecrutador-card");
+                criarFormularioEdicao(vagaCard);
+            });
+        });
+
+        document.querySelectorAll(".btn-delete-VagRe").forEach((botao) => {
+            botao.addEventListener("click", function () {
+                let vagaCard = botao.closest(".vagasrecrutador-card");
+                exibirConfirmacao(vagaCard);
+            });
+        });
+    }
+
+    adicionarEventos();
+});
+</script>      
+</body>
 </html>

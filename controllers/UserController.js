@@ -5,11 +5,13 @@ const { findAllUserTypes } = require("../services/TipoUsuarioServices");
 const { findCandidatoById } = require("../services/Candidato");
 const { findRecrutadorById } = require("../services/RecrutadorServices");
 const { findAllVagas } = require("../services/VagasServices");
+const { findAllTipoContrato } = require("../services/TipoContratoServices");
 
 
 exports.users = async (req, res) => {
     try {
-        res.render('home', { title: 'Home', ishome: true }); // Rende a página home
+        const Vaga = await findAllVagas() 
+        res.render('home', { title: 'Home', ishome: true,Vaga }); // Rende a página home
     } catch (error) {
         console.log(error);
     }
@@ -17,7 +19,6 @@ exports.users = async (req, res) => {
 
 exports.Paginainicial = async (req, res) => {
     try {
-        console.log("Req.session::::::", req.session)
         res.render('Paginainicial' , { 
             title: 'Paginainicial', 
             isPaginainicial: true, 
@@ -35,7 +36,7 @@ exports.Perfil = async (req, res) => {
     try {
         const userId = req.session.user.id
         const candidato = await findCandidatoById(userId)
-        res.render('Perfil', {candidato}); // Rende a Página escolha
+        res.render('Perfil', {candidato}); // Rende a Página perfilcandidato
     } catch (error) {
         console.log(error);
     }
@@ -45,8 +46,7 @@ exports.PerfilRecrutador = async (req, res) => {
     try {
         const userIdR = req.session.user.id
         const Recrutador = await findRecrutadorById(userIdR)
-        console.log("Recrutador::::", Recrutador)
-        res.render('PerfilRecrutador', {Recrutador}); // Rende a Página escolha
+        res.render('PerfilRecrutador', {Recrutador}); // Rende a Página perfilrecrutador
     } catch (error) {
         console.log(error);
     }
@@ -55,8 +55,7 @@ exports.PerfilRecrutador = async (req, res) => {
 exports.VagasRecrutador = async (req, res) => {
     try {
         const Vaga = await findAllVagas()
-        console.log("Recrutador::::", Vaga) 
-        res.render('VagasRecrutador',{Vaga}); // Rende a Página vagas
+        res.render('VagasRecrutador',{Vaga}); // Rende a Página vagasrecrutadores
     } catch (error) {
         console.error("Erro ao listar vagas:", error);
         console.log(error);
@@ -66,7 +65,8 @@ exports.VagasRecrutador = async (req, res) => {
 
 exports.Vaga = async (req, res) => {
     try {
-        res.render('Vaga'); // Rende a Página escolha
+        const Vaga = await findAllVagas()
+        res.render('Vaga',{Vaga}); // Rende a Página vagas
     } catch (error) {
         console.log(error);
     }
@@ -79,7 +79,7 @@ exports.PaginaRecrutadores = async (req, res) => {
         res.render('PaginaRecrutadores', { 
             title: 'Pagina Principal',
              isPaginaRecrutadores: true,
-             user: req.session.user }); // Rende a Página escolha
+             user: req.session.user }); // Rende a Página Recrutadores
     } catch (error) {
         console.log(error);
     }
@@ -90,7 +90,6 @@ exports.view = async (req, res) => {
     try {
         const user = await findAllUsers()
         const tipoUsuario = await findAllUserTypes()
-        console.log("userController::::::", tipoUsuario)
         res.render('cadastro', { user, tipoUsuario })
     } catch (error) {
 

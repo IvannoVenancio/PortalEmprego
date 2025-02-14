@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="/css/auth.css">
+<body class="senhafoi">
+    
+
+<div class="form-containeresqueceusenha">
+    <h2>Redefinir Senha</h2>
+    <form class="senha-form" action="/resetarsenha" method="POST">
+        <input type="hidden" name="token" value="{{token}}">
+        
+        <label for="senha">Nova Senha</label>
+        <input type="password" name="senha" required>
+        
+        <button type="submit">Alterar Senha</button>
+    </form>
+    
+    <a href="/login" class="back-link">Voltar para o login</a>
+</div>
+
+</body>

@@ -18,6 +18,5 @@ const findVagasById = async(userId) =>{
     return result
 }
 
-
 module.exports = { createVagas, findAllVagas,findVagasById }
 

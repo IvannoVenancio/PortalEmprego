@@ -1,9 +1,6 @@
 <link rel="stylesheet" href="/CSS/Style.css" />
 
-
-
 <body class="pagina-home">
-
 
   <!-- Container de Texto Explicativo -->
   <div class="container-textohome">
@@ -24,36 +21,28 @@
     </div>
   </div>
 
-    {{!-- Imagem Lado Direito 
+  <!-- Imagem Lado Direito -->
   <div class="image-container">
-    <img src="/img/OPORTUNIDADES.png">
-     <img src="/img/Eficiência.png"> 
-    <img src="/img/Disposição.png"> 
+    <img src="/img/moderna.jpg">
+  </div>
 
 
-  </div> 
-
-
-
-   <section class="vagas-destaque">
+  <!-- Seção de Vagas em Destaque -->
+  <section class="vagas-destaque">
     <h2>Vagas em Destaque</h2>
-    <div class="vagas-container"> --}}
-
-
+    <div class="vagas-container">
       {{#each Vaga}}
-      <div class="Vagasdestaques">
-          <h3>{{titulo}}</h3>
-          <p><strong>Descrição:</strong> {{descricao}}</p>
-          <p><strong>Localização:</strong> {{localizacao}}</p>
-          <p><strong>Salário:</strong> KZ {{salario}}</p>
-          <p><strong>Tipo de contrato:</strong> {{tipoContrato}}</p>
-          <hr>
-        </div>
+      <div class="vaga-card">
+        <h3>{{titulo}}</h3>
+        <p><strong>Descrição:</strong> {{descricao}}</p>
+        <p><strong>Localização:</strong> {{localizacao}}</p>
+        <p><strong>Salário:</strong> KZ {{salario}}</p>
+        <p><strong>Tipo de Enprego:</strong> {{tipo_emprego}}</p> 
+        <a href="/login" class="btn-ver-vaga">Ver Detalhes</a>
       </div>
       {{/each}}
-
-  
-  
+    </div>
+  </section>
 
 
 </body>

@@ -4,8 +4,7 @@ const prisma = new PrismaClient()
 const TipoContrato = prisma.tipoContrato
 
 const findAllTipoContrato = async() =>{
-    const result = await TipoContrato.findMany() 
-    // console.log("Idiomas encontrados:", result);    
+    const result = await TipoContrato.findMany()    
     return result
 }
 
